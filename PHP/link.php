@@ -22,6 +22,7 @@ In the command line type:
 sudo chmod 777 -R htdocs
 
 Run obligatory : sudo /opt/lampp/manager-linux-x64.run
+Plugin problem : https://www.youtube.com/watch?v=1Grt6NK7goQ
 
 Uninstall 
 1) Open Terminal
