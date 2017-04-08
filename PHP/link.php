@@ -43,6 +43,25 @@ or : sudo rm -r /opt/lampp
 
 
 
+Install Sublime Text :
+Install via the Package Manager(apt-get):
+
+Simply add to your packages:
+
+For Sublime-Text-2:
+
+sudo add-apt-repository ppa:webupd8team/sublime-text-2
+sudo apt-get update
+sudo apt-get install sublime-text
+
+links: http://askubuntu.com/questions/172698/how-do-i-install-sublime-text-2-3
+
+
+
+Uninstall : 
+sudo apt-get remove sublime-text-installer
+sudo apt-get remove sublime-text
+
 
 Wordpress install
    https://www.youtube.com/watch?v=o2dgPrGrfyM
