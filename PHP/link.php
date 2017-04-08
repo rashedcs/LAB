@@ -62,6 +62,12 @@ Uninstall :
 sudo apt-get remove sublime-text-installer
 sudo apt-get remove sublime-text
 
+But to remove it completely you will need to call:
+
+sudo apt-get purge --auto-remove sublime-text-installer  
+or
+sudo apt-get remove --auto-remove sublime-text-installer
+
 
 Wordpress install
    https://www.youtube.com/watch?v=o2dgPrGrfyM
