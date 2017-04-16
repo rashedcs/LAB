@@ -91,3 +91,13 @@ $ sudo apt-get remove sublime-text-installer
 
 Kali linux : virtual box :  
 http://www.thegeeky.space/2014/08/details-steps-by-steps-how-to-install-kali-linux-in-ubuntu-virtualbox-for-penetration-testing-and-hacking.html
+
+
+
+
+install
+http://sourcedigit.com/18076-how-to-install-tor-browser-bundle-on-ubuntu/
+
+
+
+
