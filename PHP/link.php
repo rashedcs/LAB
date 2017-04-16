@@ -97,6 +97,7 @@ http://www.thegeeky.space/2014/08/details-steps-by-steps-how-to-install-kali-lin
 
 install
 http://sourcedigit.com/18076-how-to-install-tor-browser-bundle-on-ubuntu/
+http://idroot.net/linux/install-tor-browser-ubuntu-16-04/
 
 
 
