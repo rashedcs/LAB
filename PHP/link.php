@@ -102,3 +102,12 @@ http://idroot.net/linux/install-tor-browser-ubuntu-16-04/
 
 
 
+
+namechaep op up : https://www.youtube.com/watch?v=_ytecpymCN4
+
+
+
+
+
+
+
