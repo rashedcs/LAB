@@ -5,8 +5,12 @@ echo "1st element ".$x. "\n";
 echo "2nd element ".$y. "\n";
 echo $x + $y;
 ?>
+ 
 
-
+<?php
+$txt = "W3Schools.com";
+echo "I love ".$txt;
+?>
 
 
 <?php
