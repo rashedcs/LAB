@@ -23,14 +23,38 @@ echo "I love ".$txt;
 
  
  
- <?php
+<?php
 function myTest() 
 {
     $x = 5; // local scope
     echo "Variable x inside function is: $x"."\n";
 } 
+
 myTest();
 
 echo "Variable x outside function is: $x";
 ?>
        
+ 
+ 
+ //Static Variable
+ <?php
+function myTest() {
+    static $x = 0;
+    echo $x;
+    $x++;
+}
+
+myTest();
+myTest();
+myTest();
+?>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
