@@ -3,6 +3,7 @@ $x = 5;
 $y = 4;
 echo "1st element ".$x. "\n";
 echo "2nd element ".$y. "\n";
+echo $x + $y;
 ?>
 
 
