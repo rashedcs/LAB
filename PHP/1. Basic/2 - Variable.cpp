@@ -1,4 +1,14 @@
 <?php
+$x = 5;
+$y = 4;
+echo "1st element ".$x. "\n";
+echo "2nd element ".$y. "\n";
+?>
+
+
+
+
+<?php
  echo "Please enter value 1 : ";
  fscanf(STDIN, "%d\n", $value1); // reads number from STDIN standard input
  echo "Please enter value 2 : ";
