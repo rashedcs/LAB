@@ -23,6 +23,8 @@ echo "I love ".$txt;
 
  
  
+ 
+//Local Variable 
 <?php
 function myTest() 
 {
@@ -35,6 +37,23 @@ myTest();
 echo "Variable x outside function is: $x";
 ?>
        
+
+//Global Variable
+<?php
+$x = 5;
+$y = 10;
+$z;
+
+function myTest() 
+{
+    global $x, $y, $z;
+    $z = $x + $y;
+}
+
+myTest();
+echo $z; // outputs 15
+?>
+ 
  
  
  //Static Variable
