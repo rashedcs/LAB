@@ -7,13 +7,11 @@
 <?php
     
 $color = "red";
-echo "My car is " . $color . "<br>";
+echo "My car is " . $color . "\n"; 
 echo "I Love PHP\n";
 
 /*
-This is a multiple-lines comment block
-that spans over multiple
-lines
+We can also use  "<br>" as a new line.
 */
 ?>
 
