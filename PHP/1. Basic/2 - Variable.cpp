@@ -20,3 +20,17 @@ echo "I love ".$txt;
  fscanf(STDIN, "%d\n", $value2);
  echo "Answer : " .($value1 + $value2) . "\n";
 ?>
+
+ 
+ 
+ <?php
+function myTest() 
+{
+    $x = 5; // local scope
+    echo "Variable x inside function is: $x"."\n";
+} 
+myTest();
+
+echo "Variable x outside function is: $x";
+?>
+       
