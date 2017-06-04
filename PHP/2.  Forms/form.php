@@ -28,7 +28,7 @@
          }
       ?>
    
-      <h2>Aishe, I hate you !</h2>
+      <h2>I hate you !</h2>
       
       <form method = "post" action = "/php/php_form_introduction.htm">
          <table>
