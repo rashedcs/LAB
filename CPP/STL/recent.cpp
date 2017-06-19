@@ -1,44 +1,29 @@
-#include <bits/stdc++.h>
-using namespace std;
+	#include <bits/stdc++.h>
+	using namespace std;
 
 
 
-int main(int argc, char const *argv[])
-{
-	int n, t, maxn;
-	cin>>n;
-	map<int,int> mp;
-	for (int i=0; i<n; i++)
+	int main(int argc, char const *argv[])
 	{
-		cin>>t;
-		mp[t]++;
+	        int n, t, maxn;
+	        map<int,int> mp;
+	
+	        cin>>n;
+		for (int i=0; i<n; i++)
+		{
+			cin>>t;
+			mp[t]++;
+		}
+
+	       for(auto val : mp )
+	       {
+		  int key = val.first;
+		  int value = val.second; ///occurence / value
+		  cout<<key<<" "<<value<<endl;
+	       }
+
+	      return 0;
 	}
-
-    for(auto val : mp )
-    {
-        int key = val.first;
-        int value = val.second; ///occurence / value
-
-        cout<<key<<" "<<value<<endl;
-    }
-
-	return 0;
-}
-
-
- //   cout<<max<<endl;
-
-	//cout << n-m << endl;
-
-
-
-
-
-
-
-
-		//m = max(m,mp[t]);
-
 
 
 
