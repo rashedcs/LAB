@@ -71,3 +71,17 @@ int main()
 }
 
 
+/** copy map key to vector:  *//
+map<int, int>m;
+vector<int>keys;
+transform(m.begin(), m.end(), back_inserter(keys), [](std::pair<int, int> p) { return p.first;} );
+
+
+
+/** copy map value to vector:  *//
+map<int, int>m;
+vector<int>keys;
+transform(m.begin(), m.end(), back_inserter(keys), [](std::pair<int, int> p) { return p.second;} );
+
+
+
