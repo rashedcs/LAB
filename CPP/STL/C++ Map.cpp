@@ -1,41 +1,38 @@
-#include <string.h>
-#include <iostream>
-#include <map>
-#include <utility>
-
+#include<bits/stdc++.h>
 using namespace std;
 
-struct cmp_str 
+/*
+bool cmp(const pair<int, int>  &p1, const pair<int, int> &p2)
 {
-   bool operator()(char const *a, char const *b) 
-   {
-      return std::strcmp(a, b) < 0;
-   }
-};
+    return p1.second < p2.second;
+}
+*/
 
 int main()
 {
-   map<char *, int, cmp_str> Employees;
+    ios::sync_with_stdio(false);
 
-   // Examples of assigning Map container contents
+    map<int, int> m;
 
-   // 1) Assignment using array index notation
-   Employees["Mike C."] = 5234;
-   Employees["Charlie M."] = 3374;
+    for(int i=0; i<10; i++)
+    {
+       m[i] = 5*i;
+    }
 
-   // 2) Assignment using member function insert() and STL pair
-   Employees.insert(std::pair<char *,int>("David D.",1923));
- 
-   // 3) Assignment using member function insert() and "value_type()"
-   Employees.insert(map<char *,int>::value_type("John A.",7582));
+    vector<pair<int, int> > v(m.begin(), m.end());
 
-   // 4) Assignment using member function insert() and "make_pair()"
-   Employees.insert(std::make_pair((char *)"Peter Q.",5328));
+    /*
+        vector<pair<int, int> > v;
+        copy(m.begin(), m.end(), back_inserter(v));
+        sort(v.begin(), v.end(), cmp);
+    */
 
-   cout << "Map size: " << Employees.size() << endl;
+    for(int i=0; i<v.size(); i++)
+    {
+        cout<<v[i].first<< " : " <<v[i].second<<endl;
+    }
 
-   for( map<char *, int, cmp_str>::iterator ii=Employees.begin(); ii!=Employees.end(); ++ii)
-   {
-       cout << (*ii).first << ": " << (*ii).second << endl;
-   }
+    return 0;
 }
+
+
