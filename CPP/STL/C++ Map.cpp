@@ -26,6 +26,12 @@
 		  cout<<key<<" "<<value<<endl;
 	       }
 
+	       for( auto it = my_map.begin(); it != my_map.end(); ++it )
+	       {
+	          int key = it->first;
+	          string& value = it->second;
+	       }
+
 	      return 0;
 	}
 
