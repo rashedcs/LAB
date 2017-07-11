@@ -24,6 +24,14 @@ sudo chmod 777 -R htdocs
 Run obligatory : sudo /opt/lampp/manager-linux-x64.run
 Plugin problem : https://www.youtube.com/watch?v=1Grt6NK7goQ
 
+if apace server can not work:
+Try using this :
+
+sudo /etc/init.d/apache2 stop
+then try starting your xampp
+
+sudo /opt/lampp/lampp start
+
 Uninstall 
 1) Open Terminal
 
