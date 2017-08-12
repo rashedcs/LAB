@@ -12,6 +12,19 @@ body
   margin: 0 auto;
 }
 
+.headersection
+{
+    height: 45px;
+    background: red;
+}
+
+.headersection h2
+{
+  color : #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .navigation
 {
      width: 100%;
@@ -41,5 +54,4 @@ body
 /* Change the link color to #111 (black) on hover */
 .navigation li a:hover {
        background-color:green;
-
 }
