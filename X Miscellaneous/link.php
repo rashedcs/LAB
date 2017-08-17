@@ -15,7 +15,7 @@ Code :
 root@rashed-H81M-S2PV:/home/rashed/Downloads#      sudo chmod +x xampp-linux-x64-7.1.1-0-installer.run
 root@rashed-H81M-S2PV:/home/rashed/Downloads#     ./xampp-linux-x64-7.1.1-0-installer.run
 
-//Full permission Htdocs : sudo chmod 777 opt/lampp/htdocs
+//Full permission Htdocs : sudo chmod -R 755 /opt/lampp/htdocs
 In the linux terminal navigate to your lampp directory.
 cd /opt/lampp
 In the command line type:
