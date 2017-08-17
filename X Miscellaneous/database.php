@@ -1,3 +1,42 @@
+1st way::
+
+
+<?php 
+Class Database
+{
+    private $user ;
+    private $host;
+	private $pass ;
+	private $db;
+
+	public function __construct()
+	{
+		$this->user = "root";
+		$this->host = "localhost";
+		$this->pass = "";
+		$this->db = "db_blog";
+	}
+
+	public function connect()
+	{
+		$link = mysql_connect($this->user, $this->host, $this->pass, $this->db);
+        return $link;
+	}
+
+	public function select($query)
+    {
+	   $res = mysql_query($query);
+	   return $res;
+    }
+}
+
+?>
+
+
+2nd way ::
+
+
+
 <?php
 Class Database{
 	public $host   = DB_HOST;
