@@ -1,6 +1,7 @@
 <?php 
  include '../lib/Session.php';
  Session::init();
+/**   http://www.codingcage.com/2014/12/php-data-insert-and-select-using-oops.html    **/
 ?>
 
 <?php include '../lib/Database.php'; ?>
