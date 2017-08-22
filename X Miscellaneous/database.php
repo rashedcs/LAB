@@ -37,6 +37,12 @@ class database
 		{
 			return false;
 		}
+		 
+		 /*
+		   //Short Code:
+		    $res = mysqli_query($this->link, $query) or die($this->link->error.__LINE);
+	            return $res;
+		*/
 	  }
 
 }
