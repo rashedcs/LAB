@@ -1,12 +1,11 @@
-﻿<?php include 'header.php'; ?>
+<?php include 'header.php'; ?>
 
 
 
 <?php
       include '../lib/database.php';
       $db = new database();
-
-      if(isset($_POST["Submit"]))
+      if(isset($_POST['submit']))
       {
         $title = mysqli_real_escape_string($db->link, $_POST['title']);
         $cat = mysqli_real_escape_string($db->link, $_POST['cat']);
@@ -18,23 +17,20 @@
         $file_name = $_FILES['image']['name'];
         $file_size = $_FILES['image']['size'];
         $file_temp = $_FILES['image']['tmp_name'];
-
         
         $div = explode('.', $file_name);
         $file_ext = strtolower(end($div));
         $unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
         $uploaded_image = "uploads/".$unique_image;
        
-
         if($title == '' || $body == '' || $cat == '' || $author == '')
         {
           $error = 'Please fill out all required fields';
         } 
          */
-
             $query = "INSERT INTO tbl_post(cat, title, body, author, date) 
                       VALUES('$cat','$title','$body' ,
-                      '$author', 'NOW()')";
+                      '$author', NOW())";
             $inserted_rows = $db->insert($query);
             if($inserted_rows)
             {
@@ -143,7 +139,7 @@
     </div>
 
    <div>
-     <button type="submit" class="btn btn-default">Submit</button>
+     <input type="submit" name="submit" value="Log In" />
    </div>
 
   </form>
