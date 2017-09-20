@@ -78,3 +78,123 @@ int main()
            }
            return 0;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+#include<vector>
+#include<cctype>
+#include<set>
+
+using namespace std;
+
+vector<string>ob,ob2;
+set<string>iden,cons;
+string arr[] ={"int","double","auto","char","for","if","else","while","return",
+"string","using","namespace","extern","true","false","continue","break","typedef","float"};
+
+int main()
+{
+    int l = sizeof(arr)/sizeof(arr[0]) ;
+   string st;
+   char ch[30];
+   getline(cin,st,'\x1A');
+   int count =0;
+   int a5_6y=5;
+  for(int i=0;i<st.size(); )
+  {
+      if(st[i]==' ')
+      {
+          i++;
+      }
+      else if(isalpha(st[i]) || (st[i]== '_'))
+      {
+          count = 0;
+          while((isalpha(st[i])|| isdigit(st[i]) || st[i]=='_') && i<st.size())
+          {
+              ch[count++] = st[i];
+              i++;
+          }
+          ch[count] = '\0';
+
+          ob.push_back(ch);
+
+      }
+      else if(isdigit(st[i]))
+      {
+         count=0;
+
+         while(isdigit(st[i])&& i<st.size() )
+         {
+          ch[count++] = st[i];
+          i++;
+         }
+         ch[count]='\0';
+         cons.insert(ch);
+
+      }
+      else
+      {
+          i++;
+      }
+  }
+  int x=0;
+  for(int i=0;i<ob.size();i++)
+  {
+      x = 0;
+      for(int j=0;j<l;j++)
+      {
+          if(ob[i]==arr[j])
+          {
+              ob2.push_back(ob[i]);
+              x =1;
+              break;
+          }
+      }
+      if(x==0)
+      {
+
+          if(ob[i]=="x1A" || ob[i]=="_")
+          {
+
+          }
+          else
+          iden.insert(ob[i]);
+      }
+
+  }
+  cout<<endl;
+  cout<<"Keyword : "<<endl;
+  for(int i=0;i<ob2.size();i++)
+  {
+      cout<<ob2[i]<<endl;
+  }
+  cout<<"Identifier: "<<endl;
+  set<string> :: iterator it;
+  for( it=iden.begin();it != iden.end();it++)
+  {
+      cout<<*it<<endl;
+  }
+  cout<<"Constant: "<<endl;
+  for( it=cons.begin();it != cons.end();it++)
+  {
+      cout<<*it<<endl;
+  }
+    return 0;
+}
