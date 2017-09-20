@@ -198,3 +198,51 @@ int main()
   }
     return 0;
 }
+
+
+
+
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+#include<ctype.h>
+void main()
+{
+int i=0,flag=0;
+char a[10][10]={"int","float","break","long","char","for","if","switch","else","while"},string[10];
+clrscr();
+printf("Enter a string :");
+gets(string);
+/*----Checking whether the string is in array a[][]----*/
+for(i=0;i<10;i++)      
+{
+if((strcmp(a[i],string)==0))
+flag=1;
+}
+/*----If it is in the array then it is a keyword----*/
+if(flag==1)
+printf("\n%s is a keyword ",string);
+/*----Otherwise check whether the string is an identifier----*/
+else
+{
+flag=0;
+/*----Checking the 1st character*----*/
+if((string[0]=='_')||(isalpha(string[0])!=0))
+{
+/*---Checking rest of the characters*---*/
+for(i=1;string[i]!='\0';i++)
+if((isalnum(string[i])==0)&&(string[i]!='_'))
+flag=1;
+}
+else
+flag=1;
+if( flag==0)
+printf("\n%s is an identifier ",string);
+else
+printf("\n%s is neither a keyword nor an identifier ",string);
+
+}
+getch();
+}
