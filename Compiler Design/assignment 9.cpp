@@ -26,6 +26,7 @@ int priority(char x)
         return 2;
 }
 
+
 int main()
 {
     char exp[20];
