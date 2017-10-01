@@ -51,6 +51,22 @@ or : sudo rm -r /opt/lampp
 
 
 
+Wordpress install
+   https://www.youtube.com/watch?v=o2dgPrGrfyM
+   https://www.youtube.com/watch?v=o2dgPrGrfyM
+   http://linuxg.net/how-to-install-sublime-text-3-build-3083-on-ubuntu-15-04-ubuntu-14-10-ubuntu-14-04-ubuntu-12-04-and-derivatives/
+   https://www.youtube.com/watch?v=S2GtxB1N0hI
+
+
+Wordpress uninstall :
+  locate directory : sudo rm -r /opt/wordpress;
+  or 
+
+ sudo chmod +x /opt/wordpress/uninstall
+ sudo /opt/wordpress/uninstall
+
+
+
 Install Sublime Text :
 Install via the Package Manager(apt-get):
 
@@ -77,11 +93,6 @@ or
 sudo apt-get remove --auto-remove sublime-text-installer
 
 
-Wordpress install
-   https://www.youtube.com/watch?v=o2dgPrGrfyM
-   https://www.youtube.com/watch?v=o2dgPrGrfyM
-   http://linuxg.net/how-to-install-sublime-text-3-build-3083-on-ubuntu-15-04-ubuntu-14-10-ubuntu-14-04-ubuntu-12-04-and-derivatives/
-   https://www.youtube.com/watch?v=S2GtxB1N0hI
    
 ubuntu write disk : https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu
 
