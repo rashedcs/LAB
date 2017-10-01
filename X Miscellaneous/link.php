@@ -65,6 +65,7 @@ Wordpress uninstall :
  sudo chmod +x /opt/wordpress/uninstall
  sudo /opt/wordpress/uninstall
 
+https://askubuntu.com/questions/642744/read-write-permissions-in-opt-directory
 
 
 Install Sublime Text :
