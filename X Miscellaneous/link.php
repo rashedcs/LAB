@@ -57,6 +57,13 @@ Wordpress install
    http://linuxg.net/how-to-install-sublime-text-3-build-3083-on-ubuntu-15-04-ubuntu-14-10-ubuntu-14-04-ubuntu-12-04-and-derivatives/
    https://www.youtube.com/watch?v=S2GtxB1N0hI
 
+full permission :
+  sudo chown -R username:username /opt/lampp/htdocs
+
+Here username is rashed
+Source : http://www.computernetworkingnotes.com/ubuntu-12-04-tips-and-tricks/how-to-fix-permission-of-htdocs-in-ubuntu.html
+
+
 
 Wordpress uninstall :
   locate directory : sudo rm -r /opt/wordpress;
