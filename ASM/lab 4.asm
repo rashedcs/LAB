@@ -44,6 +44,4 @@ MAIN PROC
     MOV AH, 4CH    ; not mandatory and for convention
     INT 21H     
  MAIN ENDP     
-
-
    
