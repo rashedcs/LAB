@@ -1,4 +1,4 @@
-/* Problem Name : Write a assembly program to find out the maximum between two numbers */
+; Problem Name : Write a assembly program to find out the maximum between two numbers 
 
 .MODEL SMALL
 .STACK 100H    
