@@ -11,10 +11,10 @@
 .CODE  
  MAIN PROC     
     
- MOV AX, @data
+ MOV AX, @data ; initialization of variable
  MOV DS, AX   
   
- MOV AH, 01
+ MOV AH, 01 ; input number
  INT 21H
  MOV DL, Al     
  
