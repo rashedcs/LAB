@@ -1,51 +1,38 @@
 ; Problem : Write a code to find the summation of 1D array 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .MODEL SMALL
-.STACK 100H
+.STACK 100H    
+
 .DATA
-arr db 25, 25, 25
-Total dw ?       
+ARR db 10, 30, 50
+TOTAL db ?       
 
 .code
-Main proc
+MAIN proc
 MOV AX, @DATA  ; initialization of data segment
 MOV DS, AX   
 
-MOV AX, 0
-MOV SI, 0
-MOV CX, 3
+XOR AX, AX    ; AX holds sum
+LEA SI,  ARR  ; SI points to array ARR
+MOV CX, 3     ; CX has number of elements
 
 
 sum:
-ADD AL, arr[SI]
-INC SI
-LOOP sum
+ADD AX, ARR[SI]    ; sum += ARR[i]
+INC SI             ; move element to the next pointer
+LOOP sum           ; loop until CX=3
+           
+         
+MOV total, AX      ; Move AX value into total  
 
-      
  
- MOV AH, 2      ;output  
- ADD AL, 48   
- MOV DL, AL
- INT 21H
+MOV AH, 2          ;output  
+MOV DL, TOTAL
+INT 21H
     
         
- MOV AH, 4CH    ; not mandatory and for convention
- INT 21H     
+MOV AH, 4CH       ; not mandatory and for convention
+INT 21H     
     
-End Main
+ENDP MAIN
