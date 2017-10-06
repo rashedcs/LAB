@@ -9,23 +9,26 @@
     
  
 .CODE
-MAIN PROC
-     MOV AX, @DATA  ; initilization of data segment
+MAIN PROC 
+    
+     MOV AX, @DATA   ;initilization of data segment
      MOV DS, AX         
-  
-     XOR AX, AX
-     XOR BX, BX
-     MOV CX, 4
+              
+              
+     XOR AX, AX      ;clear ax register
+     XOR BX, BX      ;clear base register
+     MOV CX, 4       ;number of elements
   
   
   FOR:  
-         
-     MOV AH, 2
-     MOV DL, ARR[BX]  
-     ADD DL, 48  
-     INT 21H
-     ADD BX, 1  
-     LOOP FOR
+     MOV AX, ARR[BX] ;point to the  current index 
+     ADD AX, 48      ;for converting decimal value
+        
+     MOV AH, 2       ;output
+     MOV DL, AX  
+     INT 21H     
+     
+     ADD BX, 1       ;move pointer to the next element 
+     LOOP FOR        ;loop until done
   
-
 MAIN ENDP
