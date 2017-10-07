@@ -7,7 +7,7 @@
 .STACK 100H  
 
 .DATA
- SUM DB ?
+ SUM DW ?
   
 .CODE         
 MAIN PROC    
@@ -18,7 +18,7 @@ MAIN PROC
            
   MOV AX, 1
   MOV BX, 1          
-  MOV CX, 10 
+  MOV CX, 1 
   
   
   FOR:  
@@ -27,7 +27,7 @@ MAIN PROC
    LOOP FOR
       
      
-     ;ADD AX, 48
+     ADD AX, 48
      MOV SUM, AX  
      
     
