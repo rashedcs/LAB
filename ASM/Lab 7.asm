@@ -28,7 +28,8 @@ MAIN PROC
      MOV DL, AX  
      INT 21H     
      
-     ADD BX, 1       ;move pointer to the next element 
+     INC BX
+     ;ADD BX, 1       ;move pointer to the next element 
      LOOP FOR        ;loop until done
   
 MAIN ENDP
