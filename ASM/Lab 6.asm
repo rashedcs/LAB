@@ -1,11 +1,12 @@
 ; Problem : Write a code to find the summation of 1D array 
 
 
+
 .MODEL SMALL
 .STACK 100H    
 
 .DATA
-ARR db 10, 30, 50
+ARR db 1,2,3
 TOTAL db ?       
 
 .code
@@ -23,7 +24,7 @@ ADD AX, ARR[SI]    ; sum += ARR[i]
 INC SI             ; move element to the next pointer
 LOOP sum           ; loop until CX=3
            
-         
+ADD AX, 48         ; for returning decimal value
 MOV total, AX      ; Move AX value into total  
 
  
@@ -36,4 +37,3 @@ MOV AH, 4CH       ; not mandatory and for convention
 INT 21H     
    
 MAIN ENDP
-  
