@@ -30,6 +30,7 @@ MAIN PROC
      ADD AX, 48
      MOV SUM, AX  
      
+     
     
      MOV AH, 2           ;output
      MOV DL, SUM  
