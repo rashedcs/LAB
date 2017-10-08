@@ -16,7 +16,7 @@
   
  MOV AH, 01 ; input number
  INT 21H
- MOV DL, Al     
+ MOV DL, AL     
  
  MOV BL, 2
  DIV BL
