@@ -47,6 +47,18 @@ create table teaches
 	course_id varchar(20),
 	sec_id    int,
 	semester  varchar(20),
-    year     numeric(4,0),
-    primary key(id, course_id, sec_id, semester, year)
+        year     numeric(4,0),
+        primary key(id, course_id, sec_id, semester, year)
 );
+
+
+create table takes
+(
+	s_id int,
+	course_id varchar(20),
+	sec_id    int,
+	semester  varchar(20),
+        year     numeric(4,0),
+        grade    varchar(10)
+);
+
