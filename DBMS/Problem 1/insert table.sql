@@ -35,7 +35,8 @@ insert into course(course_id, title, dept_name, credits)
       values("MU-199", "Music Video Production","Music", 3);
 insert into course(course_id, title, dept_name, credits)
       values("PHY-101", "Physical Principle","Physics", 4);
-      
+insert into course(course_id, title, dept_name, credits)
+    values("CS-319", "Image Processing","Computer Science", 3);  
       
       
       
