@@ -2,5 +2,5 @@
 
 select title
 from course
-where dept name = "Computer Science "
-and credits = 3
+where dept_name = "Computer Science "
+and credits = 3;
