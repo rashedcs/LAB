@@ -36,10 +36,11 @@ create table depositer
 (
   	customer_name   varchar(30),
         account_number int,
-	primary key (customer_name, account_number),
-	foreign key (customer_name)  references customer (customer_name),
-	foreign key (account_number) references account (account_number)
+	primary key (customer_name, account_number)
+       /* foreign key (customer_name)  references customer (customer_name), */
+       /* foreign key (account_number) references account (account_number)  */
 );
+
 
 
 -- Creating loan table=
