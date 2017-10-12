@@ -62,8 +62,10 @@ create table borrower
 	customer_name varchar(30),
 	loan_number int,
 	primary key(customer_name, loan_number)
-        --foreign key (customer_name) references customer (customer_name),
-        --foreign key (loan_number) references loan (loan_number)
+      /*
+        foreign key (customer_name) references customer (customer_name),
+        foreign key (loan_number) references loan (loan_number)
+     */
 );
 
 
