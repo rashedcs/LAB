@@ -1,10 +1,10 @@
 -- Creating branch table
 create table branch
 (
-  branch_name varchar(30),
-  branch_city varchar(30),
-  assests     int,
-  primary key(branch_name)
+       branch_name varchar(30),
+       branch_city varchar(30),
+       assests     int,
+       primary key(branch_name)
 );
 
 
@@ -65,7 +65,7 @@ create table account
 create table depositer 
 (
 	customer_name varchar(30),
-    account_number int,
+        account_number int,
 	primary key (customer_name, account_number),
 	foreign key (customer_name)  references customer (customer_name),
 	foreign key (account_number) references account (account_number)
