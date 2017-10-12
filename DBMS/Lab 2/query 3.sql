@@ -4,3 +4,4 @@
 select distinct branch name
 from account natural join depositor natural join customer
 where customer city = ’Harrison’
+
