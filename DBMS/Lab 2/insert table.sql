@@ -62,15 +62,13 @@ insert into loan values
 
 -- Inserting borrower table with values
 insert into borrower values
-	('Adams', 16),
-	('Curry', 93),
-	('Hayes', 15),
-	('Jackson', 14),
-	('Jones',  17),
-	('Smith', 11),
-	('Smith', 23),
-	('Williams', 17);
-
+    ('Smith', 11),
+    ('Jackson',14),
+    ('Hayes', 15),
+    ('Adams', 16),
+    ('Jones',  17),
+    ('Smith', 23),
+    ('Curry', 93);
 
 
 
