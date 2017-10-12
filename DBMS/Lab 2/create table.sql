@@ -35,7 +35,7 @@ create table customer
 create table depositer 
 (
   	customer_name   varchar(30),
-    account_number int,
+        account_number int,
 	primary key (customer_name, account_number),
 	foreign key (customer_name)  references customer (customer_name),
 	foreign key (account_number) references account (account_number)
@@ -46,7 +46,7 @@ create table depositer
 create table loan
 (
    	loan_number int,
-    branch_name varchar(30),
+        branch_name varchar(30),
 	amount int,
 	primary key(loan_number),
 	foreign key(branch_name) references branch(branch_name)
@@ -54,13 +54,16 @@ create table loan
 
 
 
--- Creating borrower table
 
-CREATE TABLE borrower (
+
+-- Creating borrower table
+create table borrower 
+(
 	customer_name varchar(30),
 	loan_number int,
-	PRIMARY KEY (customer_name, loan_number),
-	FOREIGN KEY (customer_name) REFERENCES customer (customer_name),
-	FOREIGN KEY (loan_number) REFERENCES loan (loan_number)
+	primary key(customer_name, loan_number)
+        --foreign key (customer_name) references customer (customer_name),
+        --foreign key (loan_number) references loan (loan_number)
 );
+
 
