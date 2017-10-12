@@ -2,4 +2,4 @@
 
 select F.customer_name
 from customer F join customer S using(customer_street, customer_city)
-where S.customer_name = ’Smith’ ;
+where S.customer_name = 'Smith' ;
