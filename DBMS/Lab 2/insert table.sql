@@ -5,9 +5,9 @@ insert into branch values
 	('Mianus',   'Horseneck', 400000),
 	('North Town', 'Rye',    3700000),
 	('Perryridge', 'Horseneck', 1700000),
-  ('Pownal', 'Bennington', 300000),
-  ('Redwood', 'Palo Alto', 2100000),
-  ('Round Hill', 'Horseneck', 8000000);
+        ('Pownal', 'Bennington', 300000),
+        ('Redwood', 'Palo Alto', 2100000),
+        ('Round Hill', 'Horseneck', 8000000);
 
 
 
@@ -32,12 +32,26 @@ insert into customer values
   -- Inserting loan table with values
 insert into loan values
 	(11, 'Round Hill', 900),
-  (14, 'Downtown',   1500),
+        (14, 'Downtown',   1500),
 	(15, 'Perryridge', 1500),
 	(16, 'Perryridge', 900),
 	(17, 'Downtown',  1000),
 	(23, 'Redwood',   2000),
 	(93, 'Mianus',    500);
+	
+	
+	
+	
+	
+-- Inserting depositor table with values
+ insert into  depositer  values
+	('Hayes',   102),
+	('Johnson', 101),	
+	('Johnson', 201),
+	('Jones',   217),	
+	('Lindsay', 222),
+	('Smith',   215),
+	('Turner',  305);
   
 
 
