@@ -1,3 +1,14 @@
+insert into classroom values ('Packard', '101', '500');
+insert into classroom values ('Painter', '514', '10');
+insert into classroom values ('Taylor', '3128', '70');
+insert into classroom values ('Watson', '100', '30');
+insert into classroom values ('Watson', '120', '50');
+
+
+
+
+
+
 insert into department(dept_name, building, budget)
 	   values("Biology", "Watson", 90000);
 insert into department(dept_name, building, budget)
@@ -129,9 +140,78 @@ insert into takes values
 	(55739, "MU-199", 1, "Spring", 2009, "B+"),
 	(76653, "EE-181", 1, "Spring", 2009, "A+"),
 	(98988, "BIO-101", 1, "Summer", 2009, "A"),
-    (98988, "BIO-301", 1, "Summer", 2010, null)
+        (98988, "BIO-301", 1, "Summer", 2010, null)
    ;
 
+
+
+
+insert into student values ('00128', 'Zhang', 'Comp. Sci.', '102');
+insert into student values ('12345', 'Shankar', 'Comp. Sci.', '32');
+insert into student values ('19991', 'Brandt', 'History', '80');
+insert into student values ('23121', 'Chavez', 'Finance', '110');
+insert into student values ('44553', 'Peltier', 'Physics', '56');
+insert into student values ('45678', 'Levy', 'Physics', '46');
+insert into student values ('54321', 'Williams', 'Comp. Sci.', '54');
+insert into student values ('55739', 'Sanchez', 'Music', '38');
+insert into student values ('70557', 'Snow', 'Physics', '0');
+insert into student values ('76543', 'Brown', 'Comp. Sci.', '58');
+insert into student values ('76653', 'Aoi', 'Elec. Eng.', '60');
+insert into student values ('98765', 'Bourikas', 'Elec. Eng.', '98');
+insert into student values ('98988', 'Tanaka', 'Biology', '120');
+
+
+
+
+
+insert into advisor values ('00128', '45565');
+insert into advisor values ('12345', '10101');
+insert into advisor values ('23121', '76543');
+insert into advisor values ('44553', '22222');
+insert into advisor values ('45678', '22222');
+insert into advisor values ('76543', '45565');
+insert into advisor values ('76653', '98345');
+insert into advisor values ('98765', '98345');
+insert into advisor values ('98988', '76766');
+
+
+
+
+
+insert into time_slot values ('A', 'M', '8', '0', '8', '50');
+insert into time_slot values ('A', 'W', '8', '0', '8', '50');
+insert into time_slot values ('A', 'F', '8', '0', '8', '50');
+insert into time_slot values ('B', 'M', '9', '0', '9', '50');
+insert into time_slot values ('B', 'W', '9', '0', '9', '50');
+insert into time_slot values ('B', 'F', '9', '0', '9', '50');
+insert into time_slot values ('C', 'M', '11', '0', '11', '50');
+insert into time_slot values ('C', 'W', '11', '0', '11', '50');
+insert into time_slot values ('C', 'F', '11', '0', '11', '50');
+insert into time_slot values ('D', 'M', '13', '0', '13', '50');
+insert into time_slot values ('D', 'W', '13', '0', '13', '50');
+insert into time_slot values ('D', 'F', '13', '0', '13', '50');
+insert into time_slot values ('E', 'T', '10', '30', '11', '45 ');
+insert into time_slot values ('E', 'R', '10', '30', '11', '45 ');
+insert into time_slot values ('F', 'T', '14', '30', '15', '45 ');
+insert into time_slot values ('F', 'R', '14', '30', '15', '45 ');
+insert into time_slot values ('G', 'M', '16', '0', '16', '50');
+insert into time_slot values ('G', 'W', '16', '0', '16', '50');
+insert into time_slot values ('G', 'F', '16', '0', '16', '50');
+insert into time_slot values ('H', 'W', '10', '0', '12', '30');
+
+
+
+
+
+
+
+insert into prereq values ('BIO-301', 'BIO-101');
+insert into prereq values ('BIO-399', 'BIO-101');
+insert into prereq values ('CS-190', 'CS-101');
+insert into prereq values ('CS-315', 'CS-101');
+insert into prereq values ('CS-319', 'CS-101');
+insert into prereq values ('CS-347', 'CS-101');
+insert into prereq values ('EE-181', 'PHY-101');
 
 
 
