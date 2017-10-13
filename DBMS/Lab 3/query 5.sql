@@ -3,9 +3,12 @@
 
 --Simply way
 select T.company_name from company T
-where (select R.city from company R where R.company_name = T.company_name)
+where 
+(select R.city from company R where R.company_name = T.company_name)
 contains
 (select S.city from company S where S.company_name="Small Bank Corporation");
+
+
 
 
 --Standard way
