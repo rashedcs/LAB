@@ -67,6 +67,6 @@ create table borrower
         foreign key (customer_name) references customer (customer_name),
         foreign key (loan_number) references loan (loan_number)
      */
-);
+);  
 
 
