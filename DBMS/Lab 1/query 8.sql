@@ -3,3 +3,4 @@
 
 select name from student natural join takes natural join course
 where course.dept = 'Computer Science';
+     
