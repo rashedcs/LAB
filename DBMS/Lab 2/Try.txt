@@ -6,3 +6,6 @@ Given queries:-
 5.Find all customers who have both an account and a loan at the Perryridge branch.
 6.Find the names of all branches that have assets greater than that of each branch in Brooklyn.
 7.Find the branch that has the higher average balance.
+
+
+Clue : http://www.mycomputerscience.net/2012/08/sql-query-performs-on-banking-database.html#
