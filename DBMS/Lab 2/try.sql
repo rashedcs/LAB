@@ -8,4 +8,4 @@ Given queries:-
 7.Find the branch that has the higher average balance.
 
 
-Clue : http://www.mycomputerscience.net/2012/08/sql-query-performs-on-banking-database.html#
+Question Source : http://www.mycomputerscience.net/2012/08/sql-query-performs-on-banking-database.html#
