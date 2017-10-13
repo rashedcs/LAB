@@ -57,7 +57,7 @@ insert into loan values
 
 
 
-
+  
 
 
 -- Inserting borrower table with values
