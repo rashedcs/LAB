@@ -30,4 +30,5 @@ create table manages
     employee_name varchar(30),
     manager_name varchar(30),
     primary key(employee_name)
-)
+);
+ 
