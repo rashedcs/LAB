@@ -22,10 +22,10 @@ create table accident
 (
   report_number int,
   acc_date  date,
-  year      numeric(4,0),
   location varchar(30),
   primary key(report_number)
 );
+
 
 
 
