@@ -6,6 +6,7 @@ insert into person values
 
 
 
+
 -- inserting car table with  values
 insert into car values
   ('Pabna H-124536', 'MAZDA', 2012),
@@ -24,3 +25,19 @@ insert into accident values
   
   
   
+  
+-- inserting owns table with  values
+insert into owns values
+  (1, 'Pabna H-124536'),
+  (2, 'Dhaka K-536985'),
+  (3, 'Raj   R-413698');
+  
+  
+  
+  
+  
+  -- inserting participated table with  values
+insert into participated values
+  (1, 'Pabna H-124536', 111, 20000),
+  (2, 'Dhaka K-536985', 222, 10000),
+  (3, 'Raj   R-413698', 333, 30000);
