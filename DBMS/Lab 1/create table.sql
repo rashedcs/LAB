@@ -84,13 +84,12 @@ create table section
 
 
 create table student
-(        ID			varchar(5), 
-	 name			varchar(20) not null, 
-	 dept_name		varchar(20), 
-	 tot_cred		numeric(3,0) check (tot_cred >= 0),
+(        ID	varchar(5), 
+	 name	varchar(20) not null, 
+	 dept_name varchar(20), 
+	 tot_cred numeric(3,0) check (tot_cred >= 0),
 	 primary key (ID),
-	 foreign key (dept_name) references department
-		on delete set null
+	 foreign key (dept_name) references department on delete set null
 );
 
 
