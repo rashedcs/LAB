@@ -14,9 +14,9 @@ Employee Database
 
 Write each of the following queries in SQL:
 
-1. Find titles of courses in Computer Science department that have 3 credits
+1. Find the names and cities of residence of all employee who work for "First Bank Corporation
 
-2. Find the IDs and titles of all student who were atught by an instructor named Einstein
+2. Find the names, street address, and cities of residence of all em-ployees who work for First Bank Corporation and earn more than $10,000.
 
 3. Find the highest salary of any instructor
 
@@ -32,7 +32,8 @@ Write each of the following queries in SQL:
 
 9. Fine the IDs and names of all students who have not taken any course offering before Spring 2009.
 
+Done
 --------
 --------
-####Done
+
 
