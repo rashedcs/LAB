@@ -4,10 +4,10 @@ Employee Database
 
 ### Database Schema :
 
-  employee( employee_name#,street, city)
-  works(employee_name, company_name, city)
-  company(company_name, city)
-  manages(employee_name, manager_name)
+  employee( employee_name#,street, city)      
+  works(employee_name, company_name, city)           
+  company(company_name, city)             
+  manages(employee_name, manager_name)                
 
 
 ### Queries
