@@ -3,8 +3,8 @@ insert into employee(employee_name, street, city) values("John", "Street E", "Bo
 insert into employee(employee_name, street, city) values("Furrenburge", "Street E", "Boston");
 insert into employee(employee_name, street, city) values("Smith", "Crown Plaza", "Boston");
 insert into employee(employee_name, street, city) values("Piters", "512 Street", "Boston");
-insert into employee(employee_name, street, city) values("Adam", "Silicon Valley", "Califonia");
-insert into employee(employee_name, street, city) values("Manno", "Silicon Valley", "Califonia");
+insert into employee(employee_name, street, city) values("Adam", "Silicon Valley", "Berkely");
+insert into employee(employee_name, street, city) values("Manno", "Silicon Valley", "Colorado");
 
 
 insert into works(employee_name, company_name, salary)  values("John", "First Bank Corporation", 3000);
