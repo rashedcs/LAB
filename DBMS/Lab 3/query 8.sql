@@ -20,5 +20,5 @@ and T.company_name = 'First Bank Corporation' ;
 
 --Another way :
 update works T set T.salary = T.salary ∗ (case when (T.salary ∗ 1.1 > 2500) then 1.03  else 1.1 )
-where T.employee-name in (select manager_name from manages) and T.company_name = 'First Bank Corporation';
+where T.employee_name in (select manager_name from manages) and T.company_name = 'First Bank Corporation';
 
