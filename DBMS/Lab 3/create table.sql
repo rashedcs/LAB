@@ -12,7 +12,7 @@ create table works
 (
     employee_name varchar(30),
     company_name  varchar(30),
-    salary        numeric(6,0),
+    salary        numeric(4,0),
     primary key(employee_name)
 );
 
