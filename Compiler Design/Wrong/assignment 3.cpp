@@ -27,7 +27,7 @@ bool checkDigit(string str)
    if(str.size()>=cnt) return true;
    else                return false;
 }
-
+  
 
 void check(string str)
 {
