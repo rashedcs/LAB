@@ -315,71 +315,6 @@ int main()
 
 
 
-/**Pa**/
-
-#include <iostream>
-#include <string>
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
-using namespace std;
-
-int main()
-{
-    string x;
-    cin>>x;
-      if((x=="do" )|| (x=="for")|| (x=="while") ||(x=="if")||(x=="double") ||(x=="char"))
-    {
-        cout<<"keyword"<<endl;
-    }
-    else if(x=="+"||x=="-"||x=="*"||x=="/"){
-        cout<<"arithmetic operator"<<endl;
-    }
-     else if(x=="++"){
-       cout<<"increment"<<endl;
-    }
-    else if(x=="--"){
-       cout<<"decrement"<<endl;
-    }
-     else if(isdigit(x.at(0))||x.at(0)=='.'){
-
-        int l=x.length();
-        int i=0;
-        int p=1;
-        if(x.at(0)=='.'){
-            p=0;
-        }else{
-             while(i<l){
-
-            if(!isdigit(x.at(i)))
-            {
-                p=0;
-            }
-            i++;
-        }
-
-        }
-
-        if(p==1)
-        {
-            cout<<"integer"<<endl;
-        }else{
-           cout<<"float"<<endl;
-        }
-     }else{
-       cout<<"sorry sir we have not type of record"<<endl;
-     }
-    return 0;
-}
-
-
-
-
-
-
-
-
 
 
 
@@ -428,18 +363,3 @@ int main()
 
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
