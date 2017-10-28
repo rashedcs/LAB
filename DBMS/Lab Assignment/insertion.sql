@@ -18,7 +18,7 @@ insert into attendence values
 
 
 --
--- Dumping data for table `ct_mark`
+-- Dumping data for table class_test
 --
 
 insert into class_test  values
