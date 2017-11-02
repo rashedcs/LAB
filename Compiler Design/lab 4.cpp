@@ -1,4 +1,4 @@
-copied : geeksforgeeks
+//copied : http://www.geeksforgeeks.org/check-given-sentence-given-set-simple-grammer-rules/
 // C program to validate a given sentence for a set of rules
 #include<stdio.h>
 #include<string.h>
@@ -19,7 +19,7 @@ bool checkSentence(char str[])
     //need to check further.
     if (str[len - 1] != '.')
         return false;
- 
+      
     // Maintain 2 states. Previous and current state based
     // on which vertex state you are. Initialise both with
     // 0 = start state.
