@@ -35,9 +35,9 @@ bool checkNumeric(string str)
 }
 
 
-void check(string str)
+bool checkKeyword(string str)
 {
-   int flag = 0;
+    int flag = 0;
     string keyword []= {"auto","break","case","char","const","continue","default","printf", "double","else","enum","extern","float","for","goto","if","int","do", "long","register","return","short","signed","sizeof","static","struct","switch","typedef","union","unsigned","void","volatile","while"};
     for(int i=0 ; i<=32 ; i++)
     {
@@ -46,14 +46,32 @@ void check(string str)
             flag = 1;
             break;
         }
-        else  flag++;
     }
-   if(flag==1) puts("Keyword");
-   else if(!isdigit(str[0])) puts("Identifier"); //never space
-   else                      puts("Invalid");
+   return flag;
 }
 
 
+bool checkIdentifier(string str)
+{
+    int flag=1;
+
+    if(str[0]=='_' || isalpha(str[0]))
+    {
+      for(int i=1 ; i<str.size(); i++)
+      {
+         if(str[i]=='_' || isalpha(str[i]) || isdigit(str[i]))
+         {
+            continue;
+         }
+         else
+         {
+            flag=0;
+            break;
+         }
+      }
+    }
+    return flag;
+}
 
 
 
@@ -74,10 +92,10 @@ int main()
 
     if(checkOperator(str))          puts("Operator");
     else if(conv.eof())             checkNumeric(str);
-
-    else                            check(str);
+    else if(checkKeyword(str))      puts("Keyword");
+    else if(checkIdentifier(str))   puts("Identifier");
+    else                            puts("not Identifier");
 
     return 0;
-
 }
 
