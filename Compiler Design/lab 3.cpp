@@ -24,11 +24,11 @@ bool checkNumeric(string str)
 
       while(b--)
       {
-         if(str[b]=='.')
-		 {
-			flag=1;
-			break;
-		 }
+          if(str[b]=='.')
+	  {
+		flag=1;
+		break;
+	  }
       }
       if(flag)  printf("Floating point\n");
       else      printf("Integer\n");
