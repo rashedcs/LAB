@@ -10,7 +10,9 @@ using namespace std;
 bool checkKeyword(string str)
 {
     int flag = 0;
-    string keyword []= {"auto","break","case","char","const","continue","default","printf", "double","else","enum","extern","float","for","goto","if","int","do", "long","register","return","short","signed","sizeof","static","struct","switch","typedef","union","unsigned","void","volatile","while"};
+    string keyword []= {"auto","break","case","char","const","continue","default","printf", "double","else","enum",
+                        "extern","float","for","goto","if","int","do", "long","register","return","short","signed",
+                        "sizeof","static","struct","switch","typedef","union","unsigned","void","volatile","while"};
     for(int i=0 ; i<=32 ; i++)
     {
         if(keyword[i]==str)
