@@ -1,4 +1,4 @@
-/*Problem Name : Write a program to swap two numbers */
+;Problem Name : Write a program to swap two numbers 
 
 .MODEL SMALL
 .STACK 100H
