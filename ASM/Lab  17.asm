@@ -20,7 +20,7 @@ MOV AH,00H      ; To avoid Divide overflow error
         
         
 ;Loop to check for Prime No
-Loop:
+FOR:
 DIV BL
 CMP AH,00H      ; Remainder is compared with 00H (AH)
 JNE NEXT
@@ -36,7 +36,7 @@ INC BL          ; Increment BL
 MOV AL,NUM      ; Move the Default no to AL
 CMP BL,NUM      ; Run the loop until BL matches Number. I.e, Run loop x no of times, where x is the Number given
 
-JNE Loop        ; Jump to check again with incremented value of BL
+JNE FOR         ; Jump to check again with incremented value of BL
                          
                          
                          
