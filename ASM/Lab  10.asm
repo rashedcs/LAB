@@ -1,4 +1,69 @@
 
+.model small
+.stack
+.data
+a db "enter the first number : $"
+b db "enter the second number: $"
+d db "sum is=$" 
+
+
+.code
+
+mov ah,01h
+int 21h
+mov bl,al 
+  
+
+
+mov ah,01h
+int 21h  
+
+
+mov ah,00h
+add al,bl  
+
+
+aaa
+mov bl, al
+mov bh, ah  
+   
+
+mov dl,bh
+add dl,30h 
+
+       
+MOV ah, 2
+add bh, 48
+MOV dl, bh
+INT 21H    
+    
+        
+mov ah,02 
+add bl, 48
+mov dl,bl  
+int 21h
+
+
+.exit
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .code
