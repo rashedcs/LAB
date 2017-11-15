@@ -1,4 +1,3 @@
-
 .model small
 .stack
 .data
@@ -28,8 +27,8 @@ mov bl, al
 mov bh, ah  
    
 
-mov dl,bh
-add dl,30h 
+;mov dl, bh
+;add dl,30h 
 
        
 MOV ah, 2
@@ -46,13 +45,6 @@ int 21h
 
 .exit
 end
-
-
-
-
-
-
-
 
 
 
