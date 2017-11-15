@@ -1,5 +1,5 @@
 ; Check the number is either prime or not
-
+; Reference : Internet
 
 .MODEL  SMALL
     .DATA
@@ -29,17 +29,17 @@
             MOV CL,AL
 
     FOR:
-            CMP CL, 1                                            ; compare if the CL value is 1.
-            JBE PRIME                                            ; Jump if CL=1 or CL=0.
+            CMP CL, 1                                           
+            JBE PRIME                                            
         
-            MOV AH,00                                           ; clear AH.
-            MOV AL, num                                         ; move the value in VAL1 to AL.
-            DIV CL                                              ; divides the loop.
-            CMP AH,00                                           ; check if AH is 0.
-            JZ NONPRIME                                          ; (Jump if Zero) if CMP returns false, jump to LBL2, else continue.
+            MOV AH,00                                          
+            MOV AL, num                                       
+            DIV CL                                           
+            CMP AH,00                                         
+            JZ NONPRIME                                        
            
-            DEC CL                                              ; decrea8se the value by 1.
-            JMP FOR                                            ; jump to LBL1.
+            DEC CL                                             
+            JMP FOR                                            
        
    
                 
