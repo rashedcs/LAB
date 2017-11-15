@@ -1,60 +1,67 @@
 ; Check the number is either prime or not
 
 
-; Declaration Part
-.MODEL SMALL
-.DATA
-MSG  DB "Number is a Prime No$"
-NMSG DB "Number is not a Prime No$"
-NUM DB 8       ;Enter the required no here
-.CODE
+.MODEL  SMALL
+    .DATA
+           num      DB     ?
+           INPUT    DB     0AH,0DH,'ENTER NO:','$'
+           MSG1     DB     0AH,0DH,'IT IS NOT PRIME','$'
+           MSG2     DB     0AH,0DH,'IT IS PRIME','$'
 
-START: 
-MOV AX,@DATA
-MOV DS,AX
+           .CODE
+    MAIN    PROC
 
-MOV AL,NUM
-MOV BL,02H    ; The Dividing starts from 2, Hence BH is compare to 02H
-MOV DX,0000H    ; To avoid Divide overflow error
-MOV AH,00H      ; To avoid Divide overflow error
+            MOV AX,@DATA
+            MOV DS,AX
+
+            LEA DX, INPUT
+            MOV AH,09H
+            INT 21H
+    
+            MOV AH,1
+            INT 21H
+            SUB AL,30H
+            MOV num, AL
+            
+            MOV AH,00
+            MOV CL,2
+            DIV CL
+            MOV CL,AL
+
+    FOR:
+            CMP CL, 1                                            ; compare if the CL value is 1.
+            JBE PRIME                                            ; Jump if CL=1 or CL=0.
         
-        
-;Loop to check for Prime No
-FOR:
-DIV BL
-CMP AH,00H      ; Remainder is compared with 00H (AH)
-JNE NEXT
-INC BH          ; BH is incremented if the Number is divisible by current value of BL
-
+            MOV AH,00                                           ; clear AH.
+            MOV AL, num                                         ; move the value in VAL1 to AL.
+            DIV CL                                              ; divides the loop.
+            CMP AH,00                                           ; check if AH is 0.
+            JZ NONPRIME                                          ; (Jump if Zero) if CMP returns false, jump to LBL2, else continue.
+           
+            DEC CL                                              ; decrea8se the value by 1.
+            JMP FOR                                            ; jump to LBL1.
+       
    
-NEXT:
-CMP BH, 02H     ; If BH > 02H, There is no need to proceed, It is not a Prime
-JE FALSE        ; The no is not a Prime No
-INC BL          ; Increment BL
-;MOV AX,0000H   ; To avoid Divide overflow error
-;MOV DX,0000H   ; To avoid Divide overflow error
-MOV AL,NUM      ; Move the Default no to AL
-CMP BL,NUM      ; Run the loop until BL matches Number. I.e, Run loop x no of times, where x is the Number given
+                
+    NONPRIME :   
+            MOV AH,09H
+            LEA DX, MSG1
+            INT 21H
+            JMP EXIT  
+   
+    
+    PRIME:
+            MOV AH,09H
+            LEA DX, MSG2
+            INT 21H   
+            JMP EXIT
+    
+    EXIT:
+            MOV AH,4CH
+            INT 21H
+    
+    MAIN    ENDP
+            END     MAIN
+    
 
-JNE FOR         ; Jump to check again with incremented value of BL
-                         
-                         
-                         
-;To display The given no is a Prime No
-TRUE: 
-LEA DX,MSG
-MOV AH,09H      ; Used to print a string
-INT 21H
-JMP EXIT
-
-;To display The given no is not a Prime No
-FALSE: 
-LEA DX,NMSG
-MOV AH,09H      ; Used to print a string
-INT 21H
-
-
-EXIT:
-MOV AH,4CH
-INT 21H
-END START
+;Daught : https://ideone.com/TnuXU1
