@@ -1,8 +1,52 @@
-;Problem : Write a program to sum of series 
+;Problem 1 : Write a program to sum of natural numbers
+;series : 1+2+3+......+n
+; Count
+; (first term - las term)/difference 
+
+
+;Source Code
+.MODEL SMALL
+.STACK
+.CODE
+MAIN PROC
+MOV AX, 0 
+MOV CX, 5
+
+FOR: 
+ADD AX, CX
+LOOP FOR      
+
+MOV AH,00H
+AAA           
+
+MOV BL, AL
+MOV BH, AH
+
+MOV AH, 02
+ADD BH, 48
+MOV DL, BH
+INT 21H     
+
+MOV AH, 02 
+ADD BL, 48
+MOV DL, BL 
+INT 21H  
+
+MAIN ENDP
+
+
+
+
+
+
+
+
+;Problem 2 : Write a program to sum of series 
 ; series : 1+4+7+.......
 ; Count
 ; (first term - las term)/difference 
 
+;Source Code
 .MODEL SMALL   
 .STACK 100H  
 
