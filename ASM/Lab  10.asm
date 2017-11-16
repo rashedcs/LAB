@@ -34,7 +34,7 @@ mov bh, ah
 MOV ah, 2
 add bh, 48
 MOV dl, bh
-INT 21H    
+INT 21H      
     
         
 mov ah,02 
