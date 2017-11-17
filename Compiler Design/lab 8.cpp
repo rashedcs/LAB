@@ -5,36 +5,49 @@ using namespace std;
 int main()
 {
    ios::sync_with_stdio(false);
-   string str;
+   string s;
    int flag;
 
-   while(getline(cin, str))
+   while(getline(cin, s))
    {
-      flag=0;
-      if(!isdigit( str[0]) || !isalpha(str[0]))
-      {
-         flag = 1;
-         break;
-      }
-      else
-      {
-         for(i=1;i<n-1;i++)
-         {
-            if( (s[i]=='*' || s[i]=='+' || s[i]=='/' || s[i]=='-') && 
-               (s[i+1]=='*' || s[i+1]=='+' ||  s[i+1]=='/' || s[i+1]=='-') )
-               {
-                    flag = 1;
-                    break;
-               }
-         }
-      }
+      size_t found= s.find("(");
 
-      if(flag==0)
+      if(found!=std::string::npos)
       {
-           printf("Valid\n");
+              cout<<"parenthesis\n";
       }
       else
       {
-           printf("Invalid\n");
+          flag=0;
+          if(!isdigit(s[0]) || !isalpha(s[0]))
+          {
+             flag = 1;
+             break;
+          }
+          else
+          {
+             for(int i=1; i<s.size()-1; i++)
+             {
+                if((s[i]=='*' || s[i]=='+' ||
+                   s[i]=='/' || s[i]=='-') &&
+                   (s[i+1]=='*' || s[i+1]=='+' ||
+                   s[i+1]=='/' || s[i+1]=='-'))
+                   {
+                        flag = 1;
+                        break;
+                   }
+             }
+          }
+
+          if(flag==0)
+          {
+               printf("Valid\n");
+          }
+          else
+          {
+               printf("Invalid\n");
+          }
       }
-}
+    }
+    return 0;
+  }
