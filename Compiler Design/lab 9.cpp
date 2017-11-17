@@ -8,7 +8,7 @@ string InfixToPostfix(string str)
 	string postfix="";
 	for(int i = 0; i< str.length(); i++)
 	{
-        if(isdigit( str[i]) || isalpha( str[i]))
+               if(isdigit( str[i]) || isalpha( str[i]))
 		{
 			postfix +=  str[i];
 		}
