@@ -1,5 +1,80 @@
 ;1+2+3+4+5+.....+n
 
+.MODEL SMALL
+.STACK 100H
+.DATA
+
+    SUM DB 0
+    N DB 10
+
+.CODE
+
+
+MAIN PROC
+    
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    MOV AH,0
+    MOV AL,10
+    XOR CX,CX                   
+    MOV CX,AX
+    
+    TOP:
+        ADD SUM,CL
+        LOOP TOP
+    
+    MOV AL,SUM
+    DIV N
+    ADD AL,48
+    ;MOV DL,AL  
+    
+    MOV AH,2 
+    MOV DL,AL
+    INT 21H
+    SUB AL,48  
+    
+    MUL N
+    SUB SUM,AL  
+    
+    MOV AH,2
+    MOV DL,SUM
+    ADD DL,48
+    ;MOV AH,2
+    INT 21H
+    
+
+    MOV AH,4CH
+    INT 21H
+    
+    MAIN ENDP   
+
+END MAIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .model small
 .stack 100h 
 .data 
