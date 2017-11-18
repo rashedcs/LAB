@@ -1,42 +1,57 @@
+.MODEL SMALL
+.STACK 100H
+ 
+ .DATA
+ VAR1 DB ?  
+ VAR2 DB ?
+         
+         
+.CODE
+MAIN PROC             
+    MOV AX, @DATA  ; INITIALIZATION OF DATA SEGMENT
+    MOV DS, AX       
+                      
+                          
+    MOV AH, 1      ; INPUT  VAR1 AND VAR2
+    INT 21H
+    MOV VAR1, AL  
+    INT 21H   
+    MOV VAR2, AL
+    
+  
+    MOV BL, VAR1
+    MOV CL, VAR2   
+          
+    ADD BL, CL     ; ADDITION OF VAR1 AND VAR2     
+    
+    
+    
+    MOV AL, BL           ;
+    MOV AH,0          
+    AAA               
+    
+    MOV BX,AX          
+    ADD BH,30H
+    ADD BL,30H
+              
+              
+    MOV AH,2
+    MOV DL,0AH          
+    INT 21H
+    MOV DL,0DH
+    INT 21H
 
-.model small
-.stack 100h
-.data
-    a db ?
-    b db ?
+    
+    MOV AH,2
+    MOV DL,BH       ;SHOWING SUM 
+    INT 21H  
+    
+    MOV AH,2
+    MOV DL,BL
+    INT 21H
 
-.code
-main proc
-    mov ah,1
-    int 21h          
-    mov a,al
-    
-    mov ah,1
-    int 21h
-    mov b,al
-    
-    add al,a           ;
-    mov ah,0          
-    aaa               
-    
-    mov bx,ax          
-    add bh,30h
-    add bl,30h
-    
-    mov ah,2
-    mov dl,0ah          ;
-    int 21h
-    mov dl,0dh
-    int 21h
-
-    
-    mov ah,2
-    mov dl,bh           ;showing sum 
-    int 21h  
-    
-    mov ah,2
-    mov dl,bl
-    int 21h
-    
-
-main endp
+     
+        
+    MOV AH, 4CH    ; NOT MANDATORY AND FOR CONVENTION
+    INT 21H     
+ MAIN ENDP     
