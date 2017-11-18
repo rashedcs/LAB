@@ -1,10 +1,9 @@
-
 ; Problem : input array from user
 INCLUDE 'EMU8086.INC'
 .MODEL SMALL
 .STACK
 .DATA
-   ARR DB 10 DUB (?)     
+   ARR DB 10 DUB (?)    
    
 .CODE
  MAIN PROC
@@ -23,9 +22,14 @@ INCLUDE 'EMU8086.INC'
     
     MOV CX, 5
     MOV DI, 0
-    ADD DI, 4       
+    ADD DI, 4    
     
-  PRINTN:
+    MOV AH, 2       ;new line  
+    MOV DL, 0AH
+    INT 21H                 
+    MOV DL, 0DH     ;curage return
+    INT 21H   
+  
     
    BACK: 
      MOV AL, ARR[DI]
@@ -36,9 +40,5 @@ INCLUDE 'EMU8086.INC'
 
      DEC DI      
    LOOP BACK    
-   
-
-   
-
-    
+      
  MAIN ENDP
