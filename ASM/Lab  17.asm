@@ -3,10 +3,10 @@
 
 .MODEL  SMALL
 .DATA
-     num   DB ?  
-     INPUT DB 0AH,0DH,"Enter Number : $"    
-     MSG1  DB 0AH,0DH,"Not Prime$"
-     MSG2  DB 0AH,0DH,"Prime$"
+            num   DB ?  
+            INPUT DB 0AH,0DH,"Enter Number : $"    
+            MSG1  DB 0AH,0DH,"Not Prime$"
+            MSG2  DB 0AH,0DH,"Prime$"
            
 .CODE
    MAIN  PROC
@@ -64,3 +64,4 @@
     MAIN    ENDP
 END     MAIN
     
+;Daught : https://ideone.com/JlrueH
