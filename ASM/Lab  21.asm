@@ -1,9 +1,9 @@
-; Problem : input array from user
-
+; Problem : traverse the inputed array from user
+; Code are given below :
 .MODEL SMALL
 .STACK
 .DATA
-   ARR DB 5 DUB (?)     
+   ARR DB 10 DUP (?)     
    
 .CODE
  MAIN PROC
@@ -19,23 +19,37 @@
       MOV ARR[BX], AL
       INC BX
     LOOP FOR
+       
+       
+    MOV AH, 2       ;new line  
+    MOV DL, 0AH
+    INT 21H                 
+    MOV DL, 0DH     ;curage return
+    INT 21H   
     
-    XOR AX, AX      ;clear ax register
+       
+       
+    XOR AX, AX      ;clear ax register   
+    MOV CX, BX
     XOR BX, BX
-    MOV CX, 10 
+    
     
     PRINT:  
-     MOV AX, ARR[BX] ;point to the  current index 
-    ;SUB AX, 48      ;for converting decimal value
+     MOV AX, ARR[BX]  ;point to the  current index 
         
-     MOV AH, 2       ;output
+     MOV AH, 2        ;output
      MOV DL, AX  
      INT 21H     
      
      INC BX           ;move pointer to the next element 
-    LOOP PRINT       ;loop until done
+    LOOP PRINT        ;loop until done
       
  MAIN ENDP
  
- 
+
+
+
+
+
+; Daught : https://ideone.com/YSCl0w
 ; Daught : https://ideone.com/GVQ3vG 
