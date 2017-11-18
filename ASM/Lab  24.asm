@@ -3,7 +3,8 @@ INCLUDE 'EMU8086.INC'
 .MODEL SMALL
 .STACK
 .DATA
-   ARR DB 10 DUB (?)    
+   ARR DB 10 DUB (?)   
+   ;STR DB 0AH,0DH,'OUTPUT: $' 
    
 .CODE
  MAIN PROC
@@ -11,19 +12,22 @@ INCLUDE 'EMU8086.INC'
     MOV DS, AX
     
     XOR BX, BX
-    MOV CX, 5
+    MOV CX, 0
     
-    FOR: 
+  FOR: 
       MOV AH, 1
-      INT 21H
+      INT 21H  
+          
+      CMP AL,0DH
+      JE  PRINT   
+      
       MOV ARR[BX], AL
-      INC BX
-    LOOP FOR
-    
-    MOV CX, 5
-    MOV DI, 0
-    ADD DI, 4    
-    
+      INC BX 
+      INC CX
+   JMP FOR
+        
+              
+ PRINT:  
     MOV AH, 2       ;new line  
     MOV DL, 0AH
     INT 21H                 
@@ -31,14 +35,21 @@ INCLUDE 'EMU8086.INC'
     INT 21H   
   
     
-   BACK: 
-     MOV AL, ARR[DI]
+  BACK: 
+     CMP CX, 0
+     JE FINISH
+     DEC CX
+     DEC BX  
      
-     MOV AH, 2       ;output
+     MOV AL, ARR[BX]
+     
+     MOV AH, 2       
      MOV DL, AL  
-     INT 21H  
-
-     DEC DI      
-   LOOP BACK    
+     INT 21H            
+   JMP BACK
+   
+ FINISH:
+    MOV AH,4CH
+    INT 21H   
       
  MAIN ENDP
