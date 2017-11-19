@@ -22,9 +22,15 @@
  MOV DL, AL     
  
  
+ ; CMP AL, 0 
+ ; JZ ZERO  
+ ; JG POSTIVE
+ ; JL NEGATIVE
+ 
  SHL AX, -1
  JC  NEGATIVE   
 
+ 
  
 POSITIVE : 
          LEA DX,  str1
