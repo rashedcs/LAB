@@ -19,7 +19,7 @@
   
  MOV AH, 01 ; input number
  INT 21H
- MOV DL, AL     
+ ;MOV DL, AL     
  
  
  ; CMP AL, 0 
