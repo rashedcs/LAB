@@ -5,10 +5,10 @@
 .STACK 100H 
 
 .DATA 
-A DW ? 
-B DW ? 
-C DW ? 
-D DW ? 
+A DB ? 
+B DB ? 
+C DB ? 
+D DB ? 
 
 .CODE 
 MAIN PROC 
@@ -23,11 +23,13 @@ MOV C, AL
 MOV AH, 01 ; input number 
 INT 21H 
 MOV D, AL 
+ 
+ 
+ 
+MOV AL, C 
+ADD AL, D 
 
-MOV AX, C 
-ADD AX, D 
-
-MOV A, AX 
+MOV A, AL 
 
 MOV AH, 2 
 MOV DL, A 
