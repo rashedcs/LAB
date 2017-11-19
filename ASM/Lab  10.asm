@@ -23,18 +23,20 @@ main proc
     aaa               
     
     mov bx,ax          
-    add bh,30h
-    add bl,30h
+    
+    
                        
     mov ah,9
     lea dx,str
     int 21h
 
     mov ah,2
+    add bh,30h
     mov dl,bh       ;showing sum 
     int 21h  
    
     mov ah,2
+    add bl,30h
     mov dl,bl
     int 21h   
  main endp     
