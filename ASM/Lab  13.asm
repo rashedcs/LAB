@@ -22,7 +22,7 @@
  DIV BL
  
  CMP AH, 0
- JNE SECOND
+ JG SECOND ;JNE SECOND
  
  FIRST : 
          LEA DX, even
