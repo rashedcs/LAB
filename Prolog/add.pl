@@ -4,6 +4,21 @@ sum(X,Y):-
 
 
 
+
+Using user input :
+
+  sum:-
+	write('Number 1 ?'),nl,
+        read(Input1),nl,
+	write('Number 2 ?'),nl,
+        read(Input2),nl,
+	Output is Input1*Input2,
+	write(Output).
+
+
+
+Another way :
+
 domains
 	a,b=integer
 predicates
