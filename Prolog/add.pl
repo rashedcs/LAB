@@ -1,3 +1,9 @@
+sum(X,Y):-
+  S is X+Y,
+  write(S).
+
+
+
 domains
 	a,b=integer
 predicates
