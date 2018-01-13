@@ -10,8 +10,10 @@ void display()
 
 	int dx = xb-xa, dy=yb-ya, steps;
 	float xIncrement, yIncrement, x = xa, y = ya;
+	
 	if(abs (dx) > abs (dy)) steps = abs (dx);
 	else                    steps = abs (dy);
+	
 	xIncrement = dx / (float) steps;
 	yIncrement = dy / (float) steps;
 
@@ -25,7 +27,7 @@ void display()
 	  y += yIncrement;
 	  glVertex2d(x, y);
 	}
-
+	
     	glEnd();
    	glFlush ();
 }
@@ -60,5 +62,5 @@ int main(int argc, char** argv)
     init ();
     glutDisplayFunc(display);
     glutMainLoop();
-    return 0; /* ISO C requires main to return int. */
+    return 0; 
 }
