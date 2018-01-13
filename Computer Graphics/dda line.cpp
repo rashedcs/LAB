@@ -53,6 +53,14 @@ int main(int argc, char** argv)
     printf("Enter End Point \n");
     scanf("%d", &xb);
     scanf("%d", &yb);
+	
+   /*Jodi input user theke newa possible na hoy 	
+   xa=200;
+   xb=200;
+   ya=200;
+   yb=400;
+   */
+
 
     glutInit(&argc, argv);
     glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
