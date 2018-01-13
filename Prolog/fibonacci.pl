@@ -6,3 +6,7 @@ fib(N,NF) :-
         B is N-2,
         fib(A,AF),fib(B,BF),
         NF is AF+BF.
+
+
+
+?- fib(5,F). 
