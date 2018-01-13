@@ -1,44 +1,35 @@
-#include <GL/gl.h>
+#include <GL/glu.h>
 #include <GL/glut.h>
 #include<bits/stdc++.h>
 
-int x1, y1, x2, y2, dx, dy, step;
+int xa, ya,  xb,  yb;
 
 void display()
 {
-    glClear (GL_COLOR_BUFFER_BIT);
+        glClear (GL_COLOR_BUFFER_BIT);
 
-    dx = x2-x1;
-    dy = y2-y1;
+	int dx = xb-xa, dy=yb-ya, steps;
+	float xIncrement, yIncrement, x = xa, y = ya;
+	if(abs (dx) > abs (dy)) steps = abs (dx);
+	else                    steps = abs (dy);
+	xIncrement = dx / (float) steps;
+	yIncrement = dy / (float) steps;
 
-    int xIncrement, yIncrement, x = x1, y = y1;
+        glColor3f (1.0, 0.0, 0.0);
+        glBegin(GL_POINTS);
+	glVertex2d(x, y);
 
-    if(abs(dx)>abs(dy))
-    {
-       step = abs(dx);
-    }
-    else
-    {
-       step = abs(dy);
-    }
+	for(int k=0; k<steps; k++)
+	{
+	  x += xIncrement;
+	  y += yIncrement;
+	  glVertex2d(x, y);
+	}
 
-    xIncrement = dx /  step;
-    yIncrement = dy /  step;
-
-    glColor3f (1.0, 0.0, 0.0);
-    glBegin(GL_POINTS);
-    glVertex2d(x, y);
-
-    for (int k=0; k<step; k++)
-    {
-       x += xIncrement;
-       y += yIncrement;
-       glVertex2d(x, y);
-    }
-    glEnd();
-
-    glFlush ();
+    	glEnd();
+   	glFlush ();
 }
+
 
 void init()
 {
@@ -48,18 +39,18 @@ void init()
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluOrtho2D(0, 500, 0, 600);
-
 }
+
 
 int main(int argc, char** argv)
 {
     printf("Enter first Point\n");
-    scanf("%d", &x1);
-    scanf("%d", &y1);
+    scanf("%d", &xa);
+    scanf("%d", &ya);
 
     printf("Enter End Point \n");
-    scanf("%d", &x2);
-    scanf("%d", &y2);
+    scanf("%d", &xb);
+    scanf("%d", &yb);
 
     glutInit(&argc, argv);
     glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
