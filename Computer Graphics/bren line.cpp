@@ -7,8 +7,7 @@ int xa, ya,  xb,  yb;
 
 void display()
 {
-        int dx = abs (xa - xb), dy = abs (ya - yb), p = 2 * dy - dx;
-        int twoDy = 2 * dy,  twoDyDx = 2 *(dy - dx), x, y, xEnd;
+        int dx = abs (xa - xb), dy = abs (ya - yb), p = 2 * dy - dx, twoDy = 2 * dy,  twoDyDx = 2 *(dy - dx), x, y, xEnd;
 
 	if(xa > xb)
 	{
@@ -39,8 +38,10 @@ void display()
 		  y++;
 		  p += twoDyDx;
 		}
-		glVertex2d(x, y);
+	   glVertex2d(x, y);
 	}
+	    	glEnd();
+   	glFlush ();
 }
 
 void init()
@@ -56,21 +57,20 @@ void init()
 
 int main(int argc, char** argv)
 {
-   /*Jodi input user theke newa possible na hoy 
+   /*Jodi input user theke newa possible na hoy
     printf("Enter first Point\n");
     scanf("%d", &xa);
     scanf("%d", &ya);
-
     printf("Enter End Point \n");
     scanf("%d", &xb);
     scanf("%d", &yb);
-   */	
-   	
+   */
+
     xa=200;
     ya=200;
     xb=400;
     yb=200;
-   
+
 
 
     glutInit(&argc, argv);
@@ -81,6 +81,6 @@ int main(int argc, char** argv)
     init ();
     glutDisplayFunc(display);
     glutMainLoop();
-    return 0; 
+    return 0;
 }
 
