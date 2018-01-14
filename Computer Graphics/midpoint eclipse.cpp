@@ -43,12 +43,12 @@ void display()
 	    putpixel(xc+x,yc-y);
 	    putpixel(xc-x,yc+y);
 	    putpixel(xc-x,yc-y);
-       }
+        }
 
   	//Region 2
-       p=ry*ry*(x+0.5)*(x+0.5)+rx*rx*(y-1)*(y-1)-rx*rx*ry*ry;
-       while(y > 0)
-       {  
+        p=ry*ry*(x+0.5)*(x+0.5)+rx*rx*(y-1)*(y-1)-rx*rx*ry*ry;
+        while(y > 0)
+        {  
             if(p <= 0)
             {
                 x++;y--;
@@ -63,8 +63,8 @@ void display()
             putpixel(xc+x,yc-y);
             putpixel(xc-x,yc+y);
             putpixel(xc-x,yc-y);
-       }
-      glFlush ();
+        }
+       glFlush ();
 }
 
 
