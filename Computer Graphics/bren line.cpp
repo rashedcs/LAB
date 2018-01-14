@@ -38,9 +38,9 @@ void display()
 		  y++;
 		  p += twoDyDx;
 		}
-	   glVertex2d(x, y);
+	        glVertex2d(x, y);
 	}
-	    	glEnd();
+	glEnd();
    	glFlush ();
 }
 
