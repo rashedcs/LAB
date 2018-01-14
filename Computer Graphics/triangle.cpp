@@ -9,6 +9,22 @@ void display()
                     glClear(GL_COLOR_BUFFER_BIT);
                     glColor3f(1.0, 0.0, 0.0);
 
+                   glBegin(GL_LINES);
+
+                   glVertex3f (-10, 20, 0.0);
+
+                    glVertex3f (-30, 20, 0.0);
+
+                    glVertex3f (-30, 20, 0.0);
+
+                    glVertex3f (-10, 40, 0.0);
+
+                    glVertex3f (-10, 40, 0.0);
+
+                    glVertex3f (-10, 20, 0.0);
+
+                    glEnd();
+
                     glBegin(GL_TRIANGLES);
                       glVertex3f (0, 10, 0.0);
                       glVertex3f (-10, -10, 0.0);
