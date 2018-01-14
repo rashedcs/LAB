@@ -1,6 +1,6 @@
-
+#include <GL/glu.h>
 #include <GL/glut.h>
-//#include<window.h>
+#include<bits/stdc++.h>
 
 void display(void)
 {
@@ -44,7 +44,7 @@ void init (void)
  */
 
 //Main program
-int main(int argc, char **argv) 
+int main(int argc, char **argv)
 {
    glutInit(&argc, argv);
    glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);  //Mode for later glutCreateWindow() call
