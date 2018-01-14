@@ -21,7 +21,7 @@ void display()
 	glColor3f (1.0, 0.0, 0.0);
 	glPointSize(1.0);
 
-	int   x=0, y = radius;
+	int x = 0, y = radius;
 	float  p = 1 - radius;
 
         glBegin(GL_POINTS);
@@ -60,7 +60,6 @@ void init()
       glMatrixMode(GL_PROJECTION);
       glLoadIdentity();
       gluOrtho2D(0, 500, 0, 600);
-      glPointSize(1.0);
 }
 
 
