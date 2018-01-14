@@ -11,7 +11,6 @@ long rx,ry;
 
 void putpixel(int x, int y)
 {
-    	glPointSize(3.0);
 	glBegin(GL_POINTS);
 	glVertex2i(x,  y);
 	glEnd();
@@ -22,6 +21,7 @@ void display()
 {
 	glClear (GL_COLOR_BUFFER_BIT);
 	glColor3f (1.0, 0.0, 0.0);
+	glPointSize(2.0);
 
 
 	p=ry*ry-rx*rx*ry+rx*rx/4;
