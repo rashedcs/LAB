@@ -9,36 +9,36 @@ void display()
                     glClear(GL_COLOR_BUFFER_BIT); //clear buffers to preset values
                     glColor3f(1.0, 0.0, 0.0);    //figure color
 
-                    glBegin(GL_LINES);
-                    glVertex2i (150, 200);
-                    glVertex2i (350, 200);
 
-                    glVertex2i (350, 200);
-                    glVertex2i (350, 400);
-
-                    glVertex2i (350, 400);
-                    glVertex2i (150, 400);
-
-                    glVertex2i (150, 400);
-                    glVertex2i (150, 200);
-                    glEnd();
-  
-  
                     glBegin(GL_POLYGON);
-                    glVertex2i (150, 200);
-                    glVertex2i (350, 200);
+                    glVertex2i (250, 300);
+                    glVertex2i (450, 300);
 
-                    glVertex2i (350, 200);
-                    glVertex2i (350, 400);
+                    glVertex2i (450, 300);
+                    glVertex2i (450, 500);
 
-                    glVertex2i (350, 400);
-                    glVertex2i (150, 400);
+                    glVertex2i (450, 500);
+                    glVertex2i (250, 500);
 
-                    glVertex2i (150, 400);
-                    glVertex2i (150, 200);
+                    glVertex2i (250, 500);
+                    glVertex2i (250, 300);
                     glEnd();
 
-  
+
+                    glBegin(GL_LINES);
+                    glVertex2i (50, 100);
+                    glVertex2i (250, 100);
+
+                    glVertex2i (250, 100);
+                    glVertex2i (250, 300);
+
+                    glVertex2i (250, 300);
+                    glVertex2i (50, 300);
+
+                    glVertex2i (50, 300);
+                    glVertex2i (50, 100);
+                    glEnd();
+
                     glFlush();
 }
 
