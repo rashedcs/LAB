@@ -79,10 +79,10 @@ void init()
 
 int main(int argc, char** argv)
 {
-     xc=30;
-     yc=10;
-     rx=100;
-     ry=100;
+     xc=200;
+     yc=200;
+     rx=10;
+     ry=20;
 
      glutInit(&argc, argv);
      glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
