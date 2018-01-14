@@ -22,7 +22,23 @@ void display()
                     glVertex2i (150, 400);
                     glVertex2i (150, 200);
                     glEnd();
+  
+  
+                    glBegin(GL_POLYGON);
+                    glVertex2i (150, 200);
+                    glVertex2i (350, 200);
 
+                    glVertex2i (350, 200);
+                    glVertex2i (350, 400);
+
+                    glVertex2i (350, 400);
+                    glVertex2i (150, 400);
+
+                    glVertex2i (150, 400);
+                    glVertex2i (150, 200);
+                    glEnd();
+
+  
                     glFlush();
 }
 
