@@ -1,6 +1,7 @@
+#include <GL/glu.h>
 #include <GL/glut.h>
+#include<bits/stdc++.h>
 
-//Drawing funciton
 void draw(void)
 {
   //Background color
