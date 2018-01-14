@@ -31,38 +31,39 @@ void display()
         {
 	    if(p < 0)
 	    {
-	      x++;
 	      p = p+2*ry*ry*x+ry*ry;
 	    }
 	    else
 	    {
-	      x++;y--;
+	      y--;
 	      p = p+2*ry*ry*x-2*rx*rx*y-ry*ry;
 	    }
 	    putpixel(xc+x,yc+y);
 	    putpixel(xc+x,yc-y);
 	    putpixel(xc-x,yc+y);
 	    putpixel(xc-x,yc-y);
+            x++;
         }
 
   	//Region 2
         p=ry*ry*(x+0.5)*(x+0.5)+rx*rx*(y-1)*(y-1)-rx*rx*ry*ry;
-        while(y > 0)
+	
+        while(y>0)
         {  
             if(p <= 0)
             {
-                x++;y--;
+                x++;
                 p = p+2*ry*ry*x-2*rx*rx*y+rx*rx;
             }
             else
             {
-                y--;
                 p = p-2*rx*rx*y+rx*rx;
             }
             putpixel(xc+x,yc+y);
             putpixel(xc+x,yc-y);
             putpixel(xc-x,yc+y);
             putpixel(xc-x,yc-y);
+            y--;
         }
        glFlush ();
 }
