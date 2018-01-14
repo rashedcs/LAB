@@ -179,7 +179,7 @@ int main (int argc, char **argv)
 
     glutInitWindowPosition(100, 100);
 
-    glutCreateWindow("Roll:140140 Ridwanul Islam");
+    glutCreateWindow("Lab 2");
 
     glutDisplayFunc(display);
 
