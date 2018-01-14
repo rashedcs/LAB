@@ -56,8 +56,8 @@ int main(int argc, char** argv)
 	
    /*Jodi input user theke newa possible na hoy 	
    xa=200;
-   xb=200;
    ya=200;
+   xb=200;
    yb=400;
    */
 
