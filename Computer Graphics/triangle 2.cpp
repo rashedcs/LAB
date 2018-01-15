@@ -34,7 +34,6 @@ void display()
 	   glVertex3f (-10, -10, 0.0);
 	   glVertex3f (10, -10, 0.0);
 	   glEnd();
-	
 	   glFlush();
 }
 
