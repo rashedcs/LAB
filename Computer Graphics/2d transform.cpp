@@ -5,14 +5,14 @@ using namespace std;
 
 int xa[10], ya[10];
 
-int   tx, ty, line=3;
+int   tx, ty, line=6;
 
 double angle, rx, ry,  sx, sy;
 
 
 void draw()
 {
-	glBegin(GL_POLYGON);
+	 glBegin(GL_LINES);
 	glColor3f(1.0, 0.0, 0.0);
 	for(int i=0; i<line;  i++)
 	{
@@ -25,7 +25,7 @@ void draw()
 
 void Translation(int x, int y)
 {
-	glBegin(GL_POLYGON);
+	 glBegin(GL_LINES);
 	for(int i=0; i<line; i++)
 	{
 		glVertex2i(xa[i]+x,  ya[i] + y);
@@ -35,7 +35,7 @@ void Translation(int x, int y)
 
 void Scalation(double x, double y)
 {
-	glBegin(GL_POLYGON);
+	 glBegin(GL_LINES);
 	for(int i=0; i<line; i++)
 	{
 		glVertex2i(xa[i]*x,  ya[i] * y);
@@ -45,7 +45,7 @@ void Scalation(double x, double y)
 
 void Rotation(double rx, double ry, double angle)
 {
-	glBegin(GL_POLYGON);
+	 glBegin(GL_LINES);
     	double t = angle*(3.14/180);
 	for(int i=0; i<line; i++)
 	{
@@ -70,26 +70,22 @@ void display()
 	 glClear (GL_COLOR_BUFFER_BIT);
 	 glColor3f (0.0, 0.0, 0.0);
 
-	 //draw();
-	 //Translation(tx, ty);
-
-	 //draw();
-	 //Scalion(sx, sy);
-
-         draw();
+     draw();
 	 Rotation(rx, ry,angle);
-	
+
 	 glFlush ();
 }
 
 int main(int argc, char** argv)
 {
-        xa[0] = 200;
-        ya[0] = 200;
-        xa[1] = 300;
-        ya[1] = 300;
-        xa[2] = 400;
-        ya[2] = 200;
+        xa[0] = 200; ya[0] = 300;
+        xa[1] = 300; ya[1] = 300;
+
+        xa[2] = 300; ya[2] = 300;
+        xa[3] = 300; ya[3] = 400;
+
+        xa[4] = 300; ya[4] = 400;
+        xa[5] = 200; ya[5] = 300;
 
         //tx=150,  ty=150;
         //sx =0.5, sy=1.5;
@@ -103,6 +99,6 @@ int main(int argc, char** argv)
         glutDisplayFunc(display);
         init();
         glutMainLoop();
-	
+
         return 0;
 }
