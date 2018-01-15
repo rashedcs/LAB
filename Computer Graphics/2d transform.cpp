@@ -3,35 +3,32 @@
 #include <GL/glut.h>
 using namespace std;
 
-int  choice = 0, edges=3;
+int xa[10], ya[10];
 
-int xa[10];
-int ya[10];
+int  tx, ty, line=3;
 
-
-int transX, transY;
-double scaleX, scaleY;
+double sx, sy;
 
 
-void drawPolygon()
+void draw()
 {
 	glBegin(GL_POLYGON);
 	glColor3f(1.0, 0.0, 0.0);
-	for(int i=0; i<3;  i++)
+	for(int i=0; i<line;  i++)
 	{
 		glVertex2i(xa[i], ya[i]);
 	}
 	glEnd();
 }
-  
 
 
-void drawPolygonTrans(int x, int y)
+
+void Translation(int x, int y)
 {
 	glBegin(GL_POLYGON);
-	for(int i=0; i<3; i++)
+	for(int i=0; i<line; i++)
 	{
-		glVertex2i(xa[i] + x, ya[i] + y);
+		glVertex2i(xa[i]+x,  ya[i] + y);
 	}
 	glEnd();
 }
@@ -39,7 +36,7 @@ void drawPolygonTrans(int x, int y)
 void drawPolygonScale(double x, double y)
 {
 	glBegin(GL_POLYGON);
-	for(int i = 0; i < edges; i++)
+	for(int i=0; i<line; i++)
 	{
 		glVertex2i(xa[i]*x,  ya[i] * y);
 	}
@@ -47,31 +44,30 @@ void drawPolygonScale(double x, double y)
 }
 
 
-void myInit ()
+void init ()
 {
     glClearColor (0.0, 0.0, 0.0, 0.0);     //terminal background color
     glMatrixMode(GL_PROJECTION);          //2d coordinates mode
-    gluOrtho2D(0.0, 500.0, 0.0, 500.0);  //2d coordinates mode
+    gluOrtho2D(0.0, 600.0, 0.0, 600.0);  //2d coordinates mode
 }
 
 
-void myDisplay()
+void display()
 {
-	    glClear (GL_COLOR_BUFFER_BIT);
-	    glColor3f (0.0, 0.0, 0.0);
+	      glClear (GL_COLOR_BUFFER_BIT);
+	      glColor3f (0.0, 0.0, 0.0);
 
-		drawPolygon();
-		drawPolygonTrans(transX, transY);
+	      draw();
+	      Translation(tx, ty);
 
-		//drawPolygon();
-		//drawPolygonScale(scaleX, scaleY);
+	      //draw();
+	      //Scalion(sx, sy);
 
-	    glFlush ();
+	      glFlush ();
 }
 
 int main(int argc, char** argv)
 {
-
      xa[0] = 200;
      ya[0] = 200;
      xa[1] = 300;
@@ -79,18 +75,17 @@ int main(int argc, char** argv)
      xa[2] = 400;
      ya[2] = 200;
 
-    transX=150,  transY=150;
+     tx=150,  ty=150;
+    //sx >> sy;
 
-    //scaleY >> scaleX;
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB); //
+    glutInitWindowSize(755,450);
+    glutInitWindowPosition(100, 100);
+    glutCreateWindow("Lab 2");
+    glutDisplayFunc(display);
+    init();
 
-
-	glutInit(&argc, argv);
-	glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
-	glutInitWindowSize (640, 480);
-	glutInitWindowPosition (100, 150);
-	glutCreateWindow ("Basic Transformations");
-	glutDisplayFunc(myDisplay);
-	myInit ();
-	glutMainLoop();
-
+    glutMainLoop();
+    return 0;
 }
