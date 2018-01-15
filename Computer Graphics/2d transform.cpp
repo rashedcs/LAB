@@ -23,7 +23,7 @@ void drawPolygon()
 	}
 	glEnd();
 }
-
+  
 
 
 void drawPolygonTrans(int x, int y)
