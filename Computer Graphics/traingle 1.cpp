@@ -29,7 +29,7 @@ void draw()
 		glVertex2i(xa[i], ya[i]);
 	}
         glEnd();
-
+ 
 
 /*
      glBegin(GL_LINES);
