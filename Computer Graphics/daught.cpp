@@ -12,7 +12,6 @@ double angle, rx, ry,  sx, sy;
 
 void draw()
 {
-
         xa[0] = 200; ya[0] = 300;
         xa[1] = 300; ya[1] = 300;
 
@@ -33,21 +32,28 @@ void draw()
 	{
 		glVertex2i(xa[i], ya[i]);
 	}
- /*
 
-                    glVertex2i (200, 200);
+		glEnd();
+       glFlush();
+
+
+/*
+     glBegin(GL_LINES);
+
+     glColor3f(1.0, 0.0, 0.0);
+                    glVertex2i (200, 300);
                     glVertex2i (300, 300);
 
                     glVertex2i (300, 300);
-                    glVertex2i (400, 200);
+                    glVertex2i (300, 400);
 
-                    glVertex2i (400, 200);
-                    glVertex2i (200, 200);
-*/
+                    glVertex2i (300, 400);
+                    glVertex2i (200, 300);
 
 
 	glEnd();
-		   glFlush();
+    glFlush();
+    */
 
 }
 
