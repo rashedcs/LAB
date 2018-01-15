@@ -13,17 +13,15 @@ double angle, rx, ry,  sx, sy;
 void draw()
 {
 
-        xa[1] = 200; ya[1] = 200;
+        xa[0] = 200; ya[0] = 300;
+        xa[1] = 300; ya[1] = 300;
 
         xa[2] = 300; ya[2] = 300;
+        xa[3] = 300; ya[3] = 400;
 
-        xa[3] = 300; xa[3] = 300;
+        xa[4] = 300; ya[4] = 400;
+        xa[5] = 200; ya[5] = 300;
 
-        xa[4] = 400; ya[4] = 200;
-
-        xa[5] = 200; ya[5] = 200;
-
-        xa[6] = 400; ya[6] = 200;
 
      glBegin(GL_LINES);
 
@@ -31,7 +29,7 @@ void draw()
 
 
 
-	for(int i=0; i<line;  i++)
+	for(int i=0; i<6;  i++)
 	{
 		glVertex2i(xa[i], ya[i]);
 	}
