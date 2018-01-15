@@ -17,6 +17,17 @@ void display()
 	   glVertex3f (-10, 40, 0.0);
 	   glVertex3f (-10, 20, 0.0);
 	   glEnd();
+	
+	  /*
+	            glVertex2i (200, 200);
+                    glVertex2i (300, 300);
+
+                    glVertex2i (300, 300);
+                    glVertex2i (400, 200);
+
+                    glVertex2i (400, 200);
+                    glVertex2i (200, 200);
+         */
 
 	   glBegin(GL_TRIANGLES);
 	   glVertex3f (0, 10, 0.0);
