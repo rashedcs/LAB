@@ -33,7 +33,7 @@ void Translation(int x, int y)
 	glEnd();
 }
 
-void drawPolygonScale(double x, double y)
+void Scalation(double x, double y)
 {
 	glBegin(GL_POLYGON);
 	for(int i=0; i<line; i++)
