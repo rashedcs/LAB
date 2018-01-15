@@ -46,15 +46,13 @@ void Scalation(double x, double y)
 void Rotation(double rx, double ry, double angle)
 {
 	glBegin(GL_POLYGON);
-
-    double t = angle*(3.14/180);
+    	double t = angle*(3.14/180);
 	for(int i=0; i<line; i++)
 	{
-        xa[i] = rx + (xa[i] - rx) * cos (t) - (ya[i] - ry) * sin (t);
-        ya[i] = ry + (xa[i] - rx) * sin (t) + (ya[i]- ry) * cos (t);
+        	xa[i] = rx + (xa[i] - rx) * cos (t) - (ya[i] - ry) * sin (t);
+        	ya[i] = ry + (xa[i] - rx) * sin (t) + (ya[i]- ry) * cos (t);
 		glVertex2i(xa[i],  ya[i]);
 	}
-
 	glEnd();
 }
 
@@ -69,19 +67,19 @@ void init ()
 
 void display()
 {
-	  glClear (GL_COLOR_BUFFER_BIT);
-	  glColor3f (0.0, 0.0, 0.0);
+	 glClear (GL_COLOR_BUFFER_BIT);
+	 glColor3f (0.0, 0.0, 0.0);
 
-	  //draw();
-	  //Translation(tx, ty);
+	 //draw();
+	 //Translation(tx, ty);
 
-	   //draw();
-	   //Scalion(sx, sy);
+	 //draw();
+	 //Scalion(sx, sy);
 
-           draw();
-	   Rotation(rx, ry,angle);
-
-	   glFlush ();
+         draw();
+	 Rotation(rx, ry,angle);
+	
+	 glFlush ();
 }
 
 int main(int argc, char** argv)
