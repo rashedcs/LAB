@@ -92,6 +92,14 @@ void keyboard(int key, int x, int y)
             case GLUT_KEY_RIGHT:
                 glRotatef(-3,0,1,0);
                 break;
+
+            case GLUT_KEY_PAGE_UP:
+                glScalef( 2.0, 2.0, 0.0 );
+                break;
+
+            case GLUT_KEY_PAGE_DOWN:
+                glScalef(0.5, 0.5, 0.0);
+                break;
         }
         DrawCube();
 }
@@ -109,3 +117,4 @@ int main(int argc, char** argv)
         glutMainLoop();
         return 0;
 }
+//Reference : https://www.wikihow.com/Make-a-Cube-in-OpenGL
