@@ -10,9 +10,9 @@ void display()
 	
 	     /* 1st Method */
               glColor3f(1.0, 0.0, 1.0);
-              float xc=10, yc=10, rx, ry, rad_angle ;
+              double xc=10, yc=10, rx, ry, rad_angle ;
               glBegin(GL_POINTS); //glBegin(GL_LINES);
-              for (float angle=0; angle<360;  angle+=1.0)
+              for(double angle=0; angle<360;  angle+=1.0)
               {
                     rad_angle = angle * 3.14 / 180;
                     rx = xc+10 * sin((double)rad_angle);
