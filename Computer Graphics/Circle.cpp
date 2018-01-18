@@ -74,3 +74,4 @@ int main (int argc, char **argv)
     return 0;
 
 }
+//glBegin(GL_LINE_LOOP) is better for both way
