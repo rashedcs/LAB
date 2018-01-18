@@ -62,7 +62,7 @@ int main (int argc, char **argv)
 
     glutInitWindowPosition(100, 100);
 
-    glutCreateWindow("Lab 2");
+    glutCreateWindow("Circle");
 
     glutDisplayFunc(display);
 
