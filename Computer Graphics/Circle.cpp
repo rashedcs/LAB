@@ -11,12 +11,12 @@ void display()
 	     /* 1st Method */
               glColor3f(1.0, 0.0, 1.0);
               double xc=10, yc=10, rx, ry, rad_angle ;
-              glBegin(GL_POINTS); //glBegin(GL_LINES);
+              glBegin(GL_POINTS); //glBegin(GL_LINES);  //glBegin(GL_LINE_LOOP);
               for(double angle=0; angle<360;  angle+=1.0)
               {
                     rad_angle = angle * 3.14 / 180;
-                    rx = xc+10 * sin((double)rad_angle);
-                    ry = yc+10 * cos((double)rad_angle);
+                    rx = xc+10 * sin(rad_angle);
+                    ry = yc+10 * cos(rad_angle);
                     glVertex3f (rx, ry, 0);
               }
               glEnd();
