@@ -194,3 +194,4 @@ int main (int argc, char **argv)
 
 
 //Daw Circle : https://stackoverflow.com/questions/22444450/drawing-circle-with-opengl
+//https://answers.unity.com/questions/597891/2d-gl-circle-render-problem.html
