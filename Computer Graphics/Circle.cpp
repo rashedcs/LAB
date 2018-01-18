@@ -15,9 +15,9 @@ void display()
               for(double angle=0; angle<360;  angle+=1.0)
               {
                     rad_angle = angle * 3.14 / 180;
-                    rx = xc+10 * sin(rad_angle);
-                    ry = yc+10 * cos(rad_angle);
-                    glVertex3f (rx, ry, 0);
+                    rx = 10 * sin(rad_angle);
+                    ry = 10 * cos(rad_angle);
+                    glVertex3f (xc+rx, yc+ry, 0);
               }
               glEnd();
 
