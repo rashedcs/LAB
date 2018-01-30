@@ -4,14 +4,13 @@ using namespace std;
 
 double f(double x)    
 {
-     return x*x + (-5)*x + 6 ;
+     return (x*x*x - 4*x - 9);
 }
 
 int main()
 {    
-    double a, b, mid;    
+    double a, b, c;    
     cin>>a>>b; //3 2
-
 
     if(f(a)*f(b)>0)       
     {             
@@ -19,23 +18,24 @@ int main()
     }
     else              
     {
-        while (fabs(a-b)>=epsilon)        
-        {
-            mid=(a+b)/2.0;        
-
-            cout<<"a="<<a<<"     "<<"b="<<b<<"     "<<"c="<<mid<<"      fc="<<f(mid)<<endl;       
-
-            if(f(a)*f(mid)>0)    
-            {
-                a=mid;    
-            }
-            else 
-            {    
-                b=mid;   
-            }    
-        }
+        cout<<"a"<<"\t\t\t"<<"b"<<"\t\t\t"<<"c"<<"\t\t\t"<<"f(c)"<<endl;
+	    while (fabs(a-b)>=epsilon)        
+	    {
+    		c=(a+b)/2.0;        
+    
+    		cout<<a<<"\t\t\t"<<b<<"\t\t\t"<<c<<"\t\t\t"<<f(c)<<endl;       
+    
+    		if (f(a)*f(c)>0)    
+    		{
+    		    a=c;    
+    		}
+    		else 
+    		{    
+    		    b=c;   
+    		}    
+	    }
      }
        
-    cout<<"The root of the equation is "<<mid<<endl;    
+    cout<<"The root of the equation is "<<c<<endl;    
     return 0;    
 }
