@@ -14,11 +14,11 @@ int main()
 
     if(f(a)*f(b)>0)       
     {             
-        cout<<"Can not determine\n"<<endl;          
+            cout<<"Can not determine\n"<<endl;          
     }
     else              
     {
-        cout<<"a"<<"\t\t\t"<<"b"<<"\t\t\t"<<"c"<<"\t\t\t"<<"f(c)"<<endl;
+	    cout<<"a"<<"\t\t\t"<<"b"<<"\t\t\t"<<"c"<<"\t\t\t"<<"f(c)"<<endl;
 	    while (fabs(a-b)>=epsilon)        
 	    {
     		c=(a+b)/2.0;        
