@@ -4,7 +4,7 @@ using namespace std;
 
 double f(double x)    
 {
-     return (x*x*x - 4*x - 9);
+     return (x*x*x - 2*x - 5);
 }
 
 int main()
@@ -25,7 +25,8 @@ int main()
     
     		cout<<a<<"\t\t\t"<<b<<"\t\t\t"<<c<<"\t\t\t"<<f(c)<<endl;       
     
-    		if (f(a)*f(c)>0)    // if(f(c)<0) //Book if f(c) is negative a exchange
+		//if(f(c)<0) f(c) is negative then a=c  
+    		if (f(a)*f(c)>0)    
     		{
     		    a=c;    
     		}
