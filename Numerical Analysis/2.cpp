@@ -42,3 +42,4 @@ int main()
     cout<<"The root of the equation is "<<c<<endl;    
     return 0;    
 }
+//Daught : https://ideone.com/uUyxYc
