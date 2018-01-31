@@ -25,7 +25,7 @@ int main()
     
     		cout<<a<<"\t\t\t"<<b<<"\t\t\t"<<c<<"\t\t\t"<<f(c)<<endl;       
     
-    		if (f(a)*f(c)>0)    
+    		if (f(a)*f(c)>0)    // if(f(c)>0)
     		{
     		    a=c;    
     		}
