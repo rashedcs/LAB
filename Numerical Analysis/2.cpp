@@ -21,19 +21,19 @@ int main()
 	    cout<<"a"<<"\t\t\t"<<"b"<<"\t\t\t"<<"c"<<"\t\t\t"<<"f(c)"<<endl;
 	    while (fabs(b-a)>=epsilon)        
 	    {
-          dx = b-a;
-          c = a + (dx*=0.5);        
+		  dx = b-a;
+		  c = a + (dx*=0.5);        
 
-          cout<<a<<"\t\t\t"<<b<<"\t\t\t"<<c<<"\t\t\t"<<f(c)<<endl;       
+		  cout<<a<<"\t\t\t"<<b<<"\t\t\t"<<c<<"\t\t\t"<<f(c)<<endl;       
 
-          if(f(a)*f(b)<0)
-          {
-              b=c;    
-          }
-          else 
-          {    
-              a=c;   
-          }    
+		  if(f(c)*f(a)<0)
+		  {
+		      b=c;    
+		  }
+		  else 
+		  {    
+		      a=c;   
+		  }    
 	    }
      }
        
