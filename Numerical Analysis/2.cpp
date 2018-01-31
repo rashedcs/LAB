@@ -34,6 +34,8 @@ int main()
 		  {    
 		      a=c;   
 		  }    
+		  //if f(c) is negative 
+		  //(f(c)<0)?  a=c : b=c;   
 	    }
      }
        
