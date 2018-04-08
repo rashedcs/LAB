@@ -17,8 +17,7 @@ int slices_spehere=30, stacks_spehere=30;
 int segments_cylinder=24;
 double temp=0;
 double move_pos=2;
-double ar=0,ar1=0,ar2=0,ar3=0;
-//static int cnum = 0; /// to check circle number to specify planes.
+double ar=0, ar1=0,ar2=0;
 
 struct point
 {
@@ -26,9 +25,6 @@ struct point
 };
 
 point l,u,r,pos;
-
-
-
 
 
 
@@ -75,58 +71,15 @@ void drawCircle(double radius,int segments,int cnum)
         points[i].y=radius*sin(((double)i/(double)segments)*2*pi);
     }
     //draw segments using generated points
-
-    if(cnum==0){
-        for(i=0;i<segments;i++)
+    for(i=0;i<segments;i++)
+    {
+        glBegin(GL_LINES);
         {
-
-            glBegin(GL_LINES);
-            {
-                glColor3f(1.0,1.0,1.0);
-                glVertex3f(points[i].x,points[i].y,0);
-                glVertex3f(points[i+1].x,points[i+1].y,0);
-            }
-            glEnd();
+			glVertex3f(points[i].x,points[i].y,0);
+			glVertex3f(points[i+1].x,points[i+1].y,0);
         }
+        glEnd();
     }
-    if( cnum==1){
-        glColor3f(1.0,0.0,0.0);
-        for(i=0;i<segments;i++)
-        {
-            glBegin(GL_LINES);
-            {
-                glVertex3f(points[i].x,points[i].y,0);
-                glVertex3f(points[i+1].x,points[i+1].y,0);
-            }
-            glEnd();
-        }
-    }
-    else if(cnum==2){
-        glColor3f(0.0,1.0,0.0);
-        for(i=0;i<segments;i++)
-        {
-            glBegin(GL_LINES);
-            {
-                glVertex3f(0,points[i].x,points[i].y);
-                glVertex3f(0,points[i+1].x,points[i+1].y);
-            }
-            glEnd();
-        }
-    }
-    else if(cnum==3){
-        glColor3f(0.0,0.0,1.0);
-        for(i=0;i<segments;i++)
-        {
-            glBegin(GL_LINES);
-            {
-                glVertex3f(points[i].x,0,points[i].y);
-                glVertex3f(points[i+1].x,0,points[i+1].y);
-            }
-            glEnd();
-        }
-    }
-
-
 
 }
 
@@ -140,20 +93,11 @@ void display(){
 	/********************
 	/ set-up camera here
 	********************/
-	//load the correct matrix -- MODEL-VIEW matrix
 	glMatrixMode(GL_MODELVIEW);
 
-	//initialize the matrix
 	glLoadIdentity();
 
-	//now give three info
-	//1. where is the camera (viewer)?
-	//2. where is the camera looking?
-	//3. Which direction is the camera's UP direction?
 
-	//gluLookAt(100,100,100,	0,0,0,	0,0,1);
-	//gluLookAt(200*cos(cameraAngle), 200*sin(cameraAngle), cameraHeight,		0,0,0,		0,0,1);
-	//gluLookAt(0,0,200,	0,0,0,	0,1,0);
 	gluLookAt(pos.x, pos.y, pos.z,     pos.x + l.x,pos.y + l.y, pos.z + l.z,     u.x, u.y, u.z);
 
 
@@ -164,10 +108,8 @@ void display(){
 	/****************************
 	/ Add your objects from here
 	****************************/
-	//add objects
 
 	drawAxes();
-//	drawGrid();
 
     glPushMatrix();
     {
@@ -198,54 +140,18 @@ void display(){
         ar2+=.05;
     }glPopMatrix();
 
-
-   /* glPushMatrix();
-    {
-        glRotatef(ar,0,0,1);
-        drawCircle(20,24,1);
-        ar+=.05;
-
-    }glPopMatrix();
-    glPushMatrix();
-    {
-        glRotatef(ar1,1,0,0);
-        drawCircle(30,24,2);
-        ar1+=.05;
-
-    }glPopMatrix();
-
-    glPushMatrix();
-    {
-        glRotatef(ar2,0,1,0);
-        drawCircle(25,24,3);
-        ar2+=.05;
-
-    }glPopMatrix();
-
-*/
-   // drawSS();
-
-
-
-    //drawCone(20,50,24);
-
-	//drawSphere(30,24,20);
-
-
-
-
-	//ADD this line in the end --- if you use double buffer (i.e. GL_DOUBLE)
 	glutSwapBuffers();
 }
 
 
-void animate(){
+void animate()
+{
 	angle+=0.05;
-	//codes for any changes in Models, Camera
 	glutPostRedisplay();
 }
-void init(){
-	//codes for initialization
+
+void init()
+{
 	drawgrid=0;
 	drawaxes=1;
 	cameraHeight=150.0;
@@ -271,9 +177,8 @@ void init(){
 
 
 	map_angle=90;
-
-	//clear the screen
 	glClearColor(0,0,0,0);
+
 
 	/************************
 	/ set-up projection here
@@ -356,27 +261,23 @@ void specialKeyListener(int key, int x,int y){
 }
 
 
-int main(int argc, char **argv){
+int main(int argc, char **argv)
+{
 	glutInit(&argc,argv);
 	glutInitWindowSize(500, 500);
 	glutInitWindowPosition(0, 0);
-	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGB);	//Depth, Double buffer, RGB color
-
+	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGB);
 	glutCreateWindow("My OpenGL Program");
 
 	init();
 
-	glEnable(GL_DEPTH_TEST);	//enable Depth Testing
+	glEnable(GL_DEPTH_TEST);
 
-	glutDisplayFunc(display);	//display callback function
-	glutIdleFunc(animate);		//what you want to do in the idle time (when no drawing is occuring)
-
-//	glutKeyboardFunc(keyboardListener);
+	glutDisplayFunc(display);
+	glutIdleFunc(animate);
 	glutSpecialFunc(specialKeyListener);
-	//glutMouseFunc(mouseListener);
 
-
-	glutMainLoop();		//The main loop of OpenGL
+	glutMainLoop();
 
 	return 0;
 }
