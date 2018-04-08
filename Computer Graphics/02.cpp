@@ -1,7 +1,4 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<math.h>
-
+#include<bits/stdc++.h>
 #include <windows.h>
 #include <GL/glut.h>
 
@@ -20,8 +17,8 @@ int slices_spehere=30, stacks_spehere=30;
 int segments_cylinder=24;
 double temp=0;
 double move_pos=2;
-double ar=0;
-
+double ar=0,ar1=0,ar2=0,ar3=0;
+//static int cnum = 0; /// to check circle number to specify planes.
 
 struct point
 {
@@ -53,9 +50,10 @@ void drawAxes()
 		}glEnd();
 	}
 }
+
 void drawSquare(double a)
 {
-    glColor3f(1.0,0.0,0.0);
+    ///glColor3f(1.0,0.0,0.0);
 	glBegin(GL_QUADS);{
 		glVertex3f( a, a,0);
 		glVertex3f( a,-a,0);
@@ -64,7 +62,8 @@ void drawSquare(double a)
 	}glEnd();
 }
 
-void drawCircle(double radius,int segments)
+
+void drawCircle(double radius,int segments,int cnum)
 {
     int i;
     struct point points[100];
@@ -76,15 +75,59 @@ void drawCircle(double radius,int segments)
         points[i].y=radius*sin(((double)i/(double)segments)*2*pi);
     }
     //draw segments using generated points
-    for(i=0;i<segments;i++)
-    {
-        glBegin(GL_LINES);
+
+    if(cnum==0){
+        for(i=0;i<segments;i++)
         {
-			glVertex3f(points[i].x,points[i].y,0);
-			glVertex3f(points[i+1].x,points[i+1].y,0);
+
+            glBegin(GL_LINES);
+            {
+                glColor3f(1.0,1.0,1.0);
+                glVertex3f(points[i].x,points[i].y,0);
+                glVertex3f(points[i+1].x,points[i+1].y,0);
+            }
+            glEnd();
         }
-        glEnd();
     }
+    if( cnum==1){
+        glColor3f(1.0,0.0,0.0);
+        for(i=0;i<segments;i++)
+        {
+            glBegin(GL_LINES);
+            {
+                glVertex3f(points[i].x,points[i].y,0);
+                glVertex3f(points[i+1].x,points[i+1].y,0);
+            }
+            glEnd();
+        }
+    }
+    else if(cnum==2){
+        glColor3f(0.0,1.0,0.0);
+        for(i=0;i<segments;i++)
+        {
+            glBegin(GL_LINES);
+            {
+                glVertex3f(0,points[i].x,points[i].y);
+                glVertex3f(0,points[i+1].x,points[i+1].y);
+            }
+            glEnd();
+        }
+    }
+    else if(cnum==3){
+        glColor3f(0.0,0.0,1.0);
+        for(i=0;i<segments;i++)
+        {
+            glBegin(GL_LINES);
+            {
+                glVertex3f(points[i].x,0,points[i].y);
+                glVertex3f(points[i+1].x,0,points[i+1].y);
+            }
+            glEnd();
+        }
+    }
+
+
+
 }
 
 void display(){
@@ -126,21 +169,60 @@ void display(){
 	drawAxes();
 //	drawGrid();
 
-    //glColor3f(1,0,0);
     glPushMatrix();
     {
-         glRotatef(ar,0,0,1);
+        glColor3f(1.0,0.0,0.0);
+        glRotatef(ar,0,0,1);
+        glTranslatef(10,0,0);
         drawSquare(10);
-    }glPopMatrix();
-    drawCircle(30,24);
-    glPushMatrix();
-    {
-    glRotatef(ar,0,0,1);
-    glTranslatef(40,0,0);
-    drawSquare(10);
-    ar+=.5;
+        ar+=.5;
     }glPopMatrix();
 
+    drawCircle(30,24,0);
+
+    glPushMatrix();
+    {
+        glColor3f(0.0,1.0,0.0);
+        glRotatef(ar1,1,0,0);
+        glTranslatef(0,40,0);
+        drawSquare(10);
+        ar1+=.06;
+    }glPopMatrix();
+
+    glPushMatrix();
+    {
+        glColor3f(0.0,0.0,1.0);
+        glRotatef(ar2,0,1,0);
+        glTranslatef(60,0,0);
+        drawSquare(10);
+        ar2+=.05;
+    }glPopMatrix();
+
+
+   /* glPushMatrix();
+    {
+        glRotatef(ar,0,0,1);
+        drawCircle(20,24,1);
+        ar+=.05;
+
+    }glPopMatrix();
+    glPushMatrix();
+    {
+        glRotatef(ar1,1,0,0);
+        drawCircle(30,24,2);
+        ar1+=.05;
+
+    }glPopMatrix();
+
+    glPushMatrix();
+    {
+        glRotatef(ar2,0,1,0);
+        drawCircle(25,24,3);
+        ar2+=.05;
+
+    }glPopMatrix();
+
+*/
    // drawSS();
 
 
