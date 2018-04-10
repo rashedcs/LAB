@@ -4,18 +4,18 @@ void solution(int arr[20][20], int n)
 {
     int k, i, l, j;
 
-    for(k=0; k<n; k++ )
+    for(i=0; i<n; i++ )
     {
-        for(i=0; i<=n; i++ )
+        for(j=0; j<=n; j++ )
         {
-            l = arr[i][k];
-            for(j=0; j<=n; j++ )
+            l = arr[j][i];
+            for(k=0; k<=n; k++ )
             {
-                if(i!=k)  arr[i][j] = (arr[k][k]*arr[i][j])-(l*arr[k][j]);
+                if(j!=i)  arr[j][k] = (arr[i][i]*arr[j][k])-(l*arr[i][k]);
             }
         }
     }
-    
+
     printf("\nSolutions : \n" );
 
     for(i=0; i<n; i++ )
