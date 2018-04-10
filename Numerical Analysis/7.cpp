@@ -1,28 +1,27 @@
 #include<stdio.h>
 
-void solution( int a[ 20 ][ 20 ], int var )
+void solution(int arr[20][20], int n)
 {
     int k, i, l, j;
 
-    for ( k = 0;k < var;k++ )
+    for(k=0; k<n; k++ )
     {
-        for ( i = 0;i <= var;i++ )
+        for(i=0; i<=n;i++ )
         {
-            l = a[ i ][ k ];
-
-            for ( j = 0;j <= var;j++ )
+            l = arr[i][k];
+            
+            for(j=0; j<=n; j++ )
             {
-                if ( i != k )
-                a[i][j] = (a[k][k]*a[i][j])-(l*a[k][j]);
+                if(i!=k)  arr[i][j] = (arr[k][k]*arr[i][j])-(l*arr[k][j]);
             }
         }
     }
 
-    printf( "\nSolutions:" );
+    printf("\nSolutions:" );
 
-    for ( i = 0;i < var;i++ )
+    for(i=0; i<var; i++ )
     {
-        printf( "\nTHE VALUE OF x%d IS %f\n", i + 1, ( float ) a[ i ][ var ] / ( float ) a[ i ][ i ] );
+        printf("\n x%d is %f\n", i+1, (float) arr[i][var] / (float) arr[i][i]);
     }
 
 }
@@ -31,27 +30,18 @@ void solution( int a[ 20 ][ 20 ], int var )
 int main()
 {
 
-    int a[ 20 ][ 20 ], var, i, j, k, l, n;
-    printf( "\nEnter the number of variables:\n" );
-    scanf( "%d", &var );
+    int n, arr[20][20];
+    scanf("%d", &n);
 
-    for ( i = 0;i < var;i++ )
+    for(int i=0; i<n;i++ )
     {
-        printf( "\nEnter the equation%d:\n", i + 1 );
-
-        for ( j = 0;j < var;j++ )
+        for(int j=0; j<n+1; j++ )
         {
-            printf( "Enter the coefficient of  x%d:\n", j + 1 );
-            scanf( "%d", &a[ i ][ j ] );
+            scanf("%d", &arr[i][j]);
         }
-
-        printf( "\nEnter the constant:\n" );
-        scanf( "%d", &a[ i ][ var] );
     }
-
-    solution( a, var );
+    solution(arr, n);
+    
     return 0;
 }
-
-
 
