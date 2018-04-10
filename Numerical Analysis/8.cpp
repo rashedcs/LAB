@@ -1,4 +1,3 @@
-
 #include<stdio.h>
 
 void solution(double arr[20][20], int n)
