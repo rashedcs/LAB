@@ -6,22 +6,21 @@ void solution(int arr[20][20], int n)
 
     for(k=0; k<n; k++ )
     {
-        for(i=0; i<=n;i++ )
+        for(i=0; i<=n; i++ )
         {
             l = arr[i][k];
-            
             for(j=0; j<=n; j++ )
             {
                 if(i!=k)  arr[i][j] = (arr[k][k]*arr[i][j])-(l*arr[k][j]);
             }
         }
     }
+    
+    printf("\nSolutions : \n" );
 
-    printf("\nSolutions:" );
-
-    for(i=0; i<var; i++ )
+    for(i=0; i<n; i++ )
     {
-        printf("\n x%d is %f\n", i+1, (float) arr[i][var] / (float) arr[i][i]);
+        printf("x%d = %f\n", i+1, (float)arr[i][n] / (float)arr[i][i]);
     }
 
 }
@@ -44,4 +43,3 @@ int main()
     
     return 0;
 }
-
