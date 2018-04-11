@@ -9,9 +9,11 @@ int main()
     scanf("%d",&n);
     printf("enter the value of x and y:");
     for(i=0;i<n;i++)
+    {
         scanf("%f %f",&ax[i],&ay[i]);
-        printf("enter the value of x for which y is wanted:");
-            scanf("%f",&x);
+    }
+    printf("enter the value of x for which y is wanted:");
+    scanf("%f",&x);
 
   h=ax[1]-ax[0];
   p=(x-ax[0])/h;
