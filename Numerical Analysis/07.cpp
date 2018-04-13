@@ -10,10 +10,10 @@ void solution(int arr[20][20], int n)
         {
             if(i!=j)
             {
-                c=A[i][j]/A[j][j];
+                c=arr[i][j]/arr[j][j];
                 for(k=1; k<=n+1; k++)
                 {
-                    A[i][k]=A[i][k]-c*A[j][k];
+                    arr[i][k]=A[i][k]-c*arr[j][k];
                 }
             }
         }
@@ -21,11 +21,10 @@ void solution(int arr[20][20], int n)
 
     printf("\nSolutions : \n" );
 
-    for(i=1; i<=n; i++)
+    for(int i=1; i<=n; i++)
     {
-        printf("x%d = %f\n", i+1, (float)arr[i][n] / (float)arr[i][i]);
+        printf("\n x%d=%f\n",i, arr[i][n+1]/arr[i][i]);
     }
-
 }
 
 
