@@ -4,19 +4,22 @@
     double lagrange(double x[], double y[],  int n,  double xi)
     {
             double num, dem, result=0; 
-         
+            
             for(int i=0; i<n; i++)
             {
                 num=dem=1;
+                /* Determine Li */
                 for(int j=0; j<n; j++)
                 {
                     if(j!=i)
                     {
-                        num *= (xi-x[j]);
+                        num *= (xi-x[j]); 
                         dem *= (x[i]-x[j]);
                     }
                 }
-                result += y[i]*(num/dem);
+                
+                /*Sum up individual Li*/
+                result += y[i]*(num/dem);    //sum = L1*y(1) + L2*y(2) + L3*y(3) + L4*y(4)
             }
             return result;
     }
