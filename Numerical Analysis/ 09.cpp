@@ -14,7 +14,7 @@
                     {
                           y[j] = y[j+1] - y[j];
                     }
-                    s = s*(p-i+1)/i;
+                    s *= (p-i+1)/i;
                     sum += s*y[0];
              }
              return sum;
