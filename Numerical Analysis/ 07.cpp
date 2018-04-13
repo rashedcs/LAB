@@ -4,14 +4,17 @@ void solution(int arr[20][20], int n)
 {
     int k, i, l, j;
 
-    for(i=1; i<=n; i++ )
+    for(j=1; j<=n; j++)
     {
-        for(j=1; j<=n; j++ )
+        for(i=1; i<=n; i++)
         {
-            l = arr[j][i];
-            for(k=1; k<=n+1; k++ )
+            if(i!=j)
             {
-                if(j!=i)  arr[j][k] = (arr[i][i]*arr[j][k])-(l*arr[i][k]);
+                c=A[i][j]/A[j][j];
+                for(k=1; k<=n+1; k++)
+                {
+                    A[i][k]=A[i][k]-c*A[j][k];
+                }
             }
         }
     }
