@@ -1,13 +1,12 @@
     #include<bits/stdc++.h>
     using namespace std;
 
-
     double newton(double x[], double y[],  int n,  double f)
     {
              double h=x[1]-x[0];
              double s=1;
-             double p=(f-x[0])/h;
-             double yo=y[0];
+             double p=(f-x[1])/h;
+             double sum=y[0];
 
              for(int i=1; i<=n-1; i++)
              {
@@ -15,12 +14,11 @@
                     {
                           y[j] = y[j+1] - y[j];
                     }
-                    s  *=  (p-i+1)/i;
-                    yo += s*yo;
+                    s = s*(p-i+1)/i;
+                    sum += s*y[0];
              }
-             return yo;
+             return sum;
     }
-
 
     int main()
     {
