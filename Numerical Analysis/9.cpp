@@ -1,37 +1,38 @@
-#include<stdio.h>
-#include<math.h>
+    #include<bits/stdc++.h>
+    using namespace std;
 
-int main()
-{
-    int i,j,k,n;
-    float h,x,yp,p,nr=1.0,dr=1.0,ax[40],ay[40],dif[40][10];
-    printf("enter the value of n:");
-    scanf("%d",&n);
-    printf("enter the value of x and y:");
-    for(i=0;i<n;i++)
+
+    double newton(double x[], double y[],  int n,  double f)
     {
-        scanf("%f %f",&ax[i],&ay[i]);
+             double h=x[1]-x[0];
+             double s=1;
+             double p=(f-x[0])/h;
+             double yo=y[0];
+
+             for(int i=1; i<=n-1; i++)
+             {
+                    for(int j=0;  j<n-i; j++)
+                    {
+                          y[j] = y[j+1] - y[j];
+                    }
+                    s  *=  (p-i+1)/i;
+                    yo += s*yo;
+             }
+             return yo;
     }
-    printf("enter the value of x for which y is wanted:");
-    scanf("%f",&x);
 
-  h=ax[1]-ax[0];
-  p=(x-ax[0])/h;
-  yp=ay[0];
 
-for(i=0;i<n;i++)
-    dif[i][1]=ay[i+1]-ay[i];
-for(j=2;j<n;j++)
-for(i=0;i<=n-j;i++)
-dif[i][j]=dif[i+1][j-1]-dif[i][j-1];
+    int main()
+    {
+              double  f, x[20], y[20];
+              int n;
+              scanf("%d",&n);
+              for(int i=0; i<n; i++)
+              {
+                  scanf("%lf %lf",&x[i], &y[i]);
+              }
+              scanf("%lf",&f);
+              printf("%lf",newton(x, y, n, f));
 
-for(k=1;k<n;k++)
-{
-    nr *=p-k+1;
-    dr *=k;
-    yp +=(nr/dr)*(dif[0][k]);
-}
-printf("when x=%.2f       y=%.4f",x,yp);
-return 0;
-
-}
+              return 0;
+    }
