@@ -1,4 +1,59 @@
-#include<bits/stdc++.h>
+
+
+/*
+static void display(void)
+{
+    const double t = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
+    const double a = t*90.0;
+
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glColor3d(1,0,0);
+
+    glPushMatrix();
+        glTranslated(-2.4,1.2,-6);
+        glRotated(60,1,0,0);
+        glRotated(a,0,0,1);
+        glutSolidSphere(1,slices,stacks);
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslated(0,1.2,-6);
+        glRotated(60,1,0,0);
+        glRotated(a,0,0,1);
+        glutSolidCone(1,1,slices,stacks);
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslated(2.4,1.2,-6);
+        glRotated(60,1,0,0);
+        glRotated(a,0,0,1);
+        glutSolidTorus(0.2,0.8,slices,stacks);
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslated(-2.4,-1.2,-6);
+        glRotated(60,1,0,0);
+        glRotated(a,0,0,1);
+        glutWireSphere(1,slices,stacks);
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslated(0,-1.2,-6);
+        glRotated(60,1,0,0);
+        glRotated(a,0,0,1);
+        glutWireCone(1,1,slices,stacks);
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslated(2.4,-1.2,-6);
+        glRotated(60,1,0,0);
+        glRotated(a,0,0,1);
+        glutWireTorus(0.2,0.8,slices,stacks);
+    glPopMatrix();
+
+    glutSwapBuffers();
+}
+*/#include<bits/stdc++.h>
 #include <windows.h>
 #include <GL\glut.h>
 
@@ -11,33 +66,50 @@ void init()
           glOrtho(-15,15,-15,15,-15,15);
 }
 
-
-void circle()
+void drawAxes()
 {
+		glColor3f(1.0, 1.0, 1.0);
+		glBegin(GL_LINES);{
+			glVertex3f( 100,0,0);
+			glVertex3f(-100,0,0);
 
-            glClear(GL_COLOR_BUFFER_BIT);
+			glVertex3f(0,-100,0);
+			glVertex3f(0, 100,0);
 
-	     /* 1st Method */
-              glColor3f(1.0, 0.0, 1.0);
-              double xc=10, yc=10, rx, ry, rad_angle ;
-              glBegin(GL_POINTS); //glBegin(GL_LINES);  //glBegin(GL_LINE_LOOP);
-              for(double angle=0; angle<360;  angle+=1.0)
-              {
-                    rad_angle = angle * 3.14 / 180;
-                    rx = 10 * sin(rad_angle);
-                    ry = 10 * cos(rad_angle);
-                    glVertex3f (xc+rx, yc+ry, 0);
-              }
-              glEnd();
-
-	  glFlush();
+			glVertex3f(0,0, 100);
+			glVertex3f(0,0,-100);
+		}glEnd();
 }
 
-void DrawCube()
-{
 
-        glClear(GL_COLOR_BUFFER_BIT);
-  circle();
+void DrawSphere()
+{
+    glColor3f(1,0,0);
+    glPushMatrix();
+        glTranslated(-2.4,1.2,-6);
+        glRotated(60,1,0,0);
+        glRotated(60,0,0,1);
+        glutSolidSphere(1,16,16);
+    glPopMatrix();
+}
+
+void DrawCone()
+{
+    glPushMatrix();
+        glTranslated(0,1.2,-6);
+        glRotated(60,1,0,0);
+        glRotated(90,0,0,1);
+        glutSolidCone(1,1,16,16);
+    glPopMatrix();
+}
+
+void display()
+{
+          glClear(GL_COLOR_BUFFER_BIT);
+          drawAxes();
+          DrawSphere();
+          DrawCone();
+          /*
           glBegin(GL_QUADS);
           glColor3f(1, 0, 0);
           glVertex3f(3, -3, -3);
@@ -90,7 +162,9 @@ void DrawCube()
           glVertex3f( -3, -3, -3 );
           glEnd();
 
+          */
        glFlush();
+
 }
 
 
@@ -122,7 +196,7 @@ void keyboard(int key, int x, int y)
                 glScalef(0.5, 0.5, 0.0);
                 break;
         }
-        DrawCube();
+        display();
 }
 
 
@@ -133,9 +207,8 @@ int main(int argc, char** argv)
         glutInitWindowSize(600, 600);
         glutCreateWindow("3d Cube");
         init();
-        glutDisplayFunc(DrawCube);
+        glutDisplayFunc(display);
         glutSpecialFunc(keyboard);
         glutMainLoop();
         return 0;
 }
-//Reference : https://www.wikihow.com/Make-a-Cube-in-OpenGL
