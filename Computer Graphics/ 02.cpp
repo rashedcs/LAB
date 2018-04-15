@@ -1,7 +1,4 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<math.h>
-
+#include<bits/stdc++.h>
 #include <windows.h>
 #include <GL/glut.h>
 
@@ -13,14 +10,6 @@ int drawgrid;
 int drawaxes;
 double angle;
 
-double fullHand_angle=0.0;
-double backMove_angle=0.0;
-//double upperPart_angle;
-double lowerPart_angle=0.0;
-double palm_angle; //hater talu
-double rigthFinger_angle=0.0;
-double leftFinger_angle=0.0;
-double middleFinger_angle=0.0;
 
 struct point
 {
@@ -58,7 +47,7 @@ void drawSquare()
        // glRotatef(-2,4,1.2,-6);
         glRotatef(60,1,0,0);
         glScalef(1,1,5);
-        glutWireSphere(10,16,16);
+        glutSphere(10,16,16);
     glPopMatrix();
 }
 
