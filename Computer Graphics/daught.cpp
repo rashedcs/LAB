@@ -31,20 +31,21 @@ void DrawSphere()
 {
     glColor3f(1,0,0);
     glPushMatrix();
-        glTranslated(-2.4,1.2,-6);
+         glTranslated(+8,-6,-6);
         glRotated(60,1,0,0);
-        glRotated(60,0,0,1);
-        glutSolidSphere(1,16,16);
+        glRotated(90,0,0,1);
+        glutSolidSphere(3,16,16);
     glPopMatrix();
 }
 
 void DrawCone()
 {
+    glColor3f(1,0,1);
     glPushMatrix();
-        glTranslated(0,1.2,-6);
+        glTranslated(-8,6,6);
         glRotated(60,1,0,0);
-        glRotated(90,0,0,1);
-        glutSolidCone(1,1,16,16);
+        glRotated(60,0,0,1);
+        glutSolidCone(5,5,16,16);
     glPopMatrix();
 }
 
@@ -157,6 +158,7 @@ int main(int argc, char** argv)
         glutMainLoop();
         return 0;
 }
+
 
 
 
