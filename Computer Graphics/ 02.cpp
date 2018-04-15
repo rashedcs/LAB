@@ -1,7 +1,7 @@
+/** Md. Rashedul Islam   ID : 150135 **/
 #include<bits/stdc++.h>
 #include <windows.h>
 #include <GL\glut.h>
-
 
 
 void init()
@@ -14,16 +14,21 @@ void init()
 void drawAxes()
 {
 		glColor3f(1.0, 1.0, 1.0);
-		glBegin(GL_LINES);{
-			glVertex3f( 100,0,0);
-			glVertex3f(-100,0,0);
+		glBegin(GL_LINES);
+		{
+		    glColor3f(1, 1, 0);
+			glVertex3f( 15,0,0);
+			glVertex3f(-15,0,0);
 
-			glVertex3f(0,-100,0);
-			glVertex3f(0, 100,0);
+			glColor3f(1, 0, 1.);
+			glVertex3f(0,-15,0);
+			glVertex3f(0, 15,0);
 
-			glVertex3f(0,0, 100);
-			glVertex3f(0,0,-100);
-		}glEnd();
+            glColor3f(1, 1, 1);
+			glVertex3f(0,0, 15);
+			glVertex3f(0,0,-15);
+		}
+		glEnd();
 }
 
 
@@ -31,7 +36,7 @@ void DrawSphere()
 {
     glColor3f(1,0,0);
     glPushMatrix();
-         glTranslated(+8,-6,-6);
+        glTranslated(+8,-6,-6);
         glRotated(60,1,0,0);
         glRotated(90,0,0,1);
         glutSolidSphere(3,16,16);
@@ -49,58 +54,52 @@ void DrawCone()
     glPopMatrix();
 }
 
+
+double xpoint(double x, int seg)
+{
+
+}
+
+
+void drawCylinder(double radius, double height, double segments)
+{
+    double shade;
+
+    for(int i=0;i<segments;i++)
+    {
+        glBegin(GL_LINES);
+        {
+           // if(i<segments/2)shade=2*(double)i/(double)segments;
+          //  else shade=2*(1.0-(double)i/(double)segments);
+
+            double x = radius*cos(((double)i/(double)segments)*2*3.1416);
+            double y = radius*sin(((double)i/(double)segments)*2*3.1416);
+
+            double  fx = radius*cos(((double)(1+i)/(double)segments+1)*2*3.1416);
+            double fy = radius*sin(((double)(1+i)/(double)segments+1)*2*3.1416);
+
+            glColor3f(1,0,0);
+            glVertex3f(x, y, 0);
+            glVertex3f(x, y, height);
+
+            glVertex3f(x, y, 0);
+			glVertex3f(fx, fy, 0);
+
+			glVertex3f(x, y, height);
+			glVertex3f(fx, fy, height);
+        }
+        glEnd();
+    }
+}
+
 void display()
 {
-          glClear(GL_COLOR_BUFFER_BIT);
+      glClear(GL_COLOR_BUFFER_BIT);
           drawAxes();
-          DrawSphere();
-          DrawCone();
-          /*
-          glBegin(GL_QUADS);
-          glColor3f(1, 0, 0);
-          glVertex3f(3, -3, -3);
-          glVertex3f(3,  3, -3);
-          glVertex3f(-3,  3, -3);
-          glVertex3f(-3, -3, -3 );
-          glEnd();
-          glBegin(GL_QUADS);
-          glColor3f(1,  1, 1);
-          glVertex3f( 3, -3, 3 );
-          glVertex3f( 3,  3, 3 );
-          glVertex3f(-3,  3, 3);
-          glVertex3f(-3, -3, 3);
-          glEnd();
-          glBegin(GL_QUADS);
-          glColor3f(1,  0,  1);
-          glVertex3f( 3, -3, -3);
-          glVertex3f( 3,  3, -3);
-          glVertex3f( 3,  3,  3);
-          glVertex3f( 3, -3,  3 );
-          glEnd();
-          glBegin(GL_QUADS);
-          glColor3f(0,  1,  0);
-          glVertex3f( -3,  -3,  3 );
-          glVertex3f( -3,  3, 3 );
-          glVertex3f( -3,  3, -3 );
-          glVertex3f( -3, -3, -3 );
-          glEnd();
-          glBegin(GL_QUADS);
-          glColor3f(0,  0,  1);
-          glVertex3f(  3,  3,  3 );
-          glVertex3f(  3,  3, -3 );
-          glVertex3f( -3,  3, -3 );
-          glVertex3f( -3,  3,  3 );
-          glEnd();
-          glBegin(GL_QUADS);
-          glColor3f( 1,  0,  0);
-          glVertex3f(  3, -3, -3 );
-          glVertex3f(  3, -3,  3 );
-          glVertex3f( -3, -3,  3 );
-          glVertex3f( -3, -3, -3 );
-          glEnd();
-          */
+         DrawSphere();
+         DrawCone();
+          drawCylinder(5,5,100);
        glFlush();
-
 }
 
 
@@ -125,11 +124,11 @@ void keyboard(int key, int x, int y)
                 break;
 
             case GLUT_KEY_PAGE_UP:
-                glScalef( 2.0, 2.0, 0.0 );
+                glScalef(1.5, 1.5, 0.0 );
                 break;
 
             case GLUT_KEY_PAGE_DOWN:
-                glScalef(0.5, 0.5, 0.0);
+                glScalef(0.75, 0.75, 0.0);
                 break;
         }
         display();
@@ -141,60 +140,10 @@ int main(int argc, char** argv)
         glutInit(&argc, argv);
         glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
         glutInitWindowSize(600, 600);
-        glutCreateWindow("3d Cube");
+        glutCreateWindow("Lab 2");
         init();
         glutDisplayFunc(display);
         glutSpecialFunc(keyboard);
         glutMainLoop();
         return 0;
 }
-
-
-
-
-/*
-static void display(void)
-{
-    const double t = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
-    const double a = t*90.0;
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glColor3d(1,0,0);
-    glPushMatrix();
-        glTranslated(-2.4,1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutSolidSphere(1,slices,stacks);
-    glPopMatrix();
-    glPushMatrix();
-        glTranslated(0,1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutSolidCone(1,1,slices,stacks);
-    glPopMatrix();
-    glPushMatrix();
-        glTranslated(2.4,1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutSolidTorus(0.2,0.8,slices,stacks);
-    glPopMatrix();
-    glPushMatrix();
-        glTranslated(-2.4,-1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutWireSphere(1,slices,stacks);
-    glPopMatrix();
-    glPushMatrix();
-        glTranslated(0,-1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutWireCone(1,1,slices,stacks);
-    glPopMatrix();
-    glPushMatrix();
-        glTranslated(2.4,-1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutWireTorus(0.2,0.8,slices,stacks);
-    glPopMatrix();
-    glutSwapBuffers();
-}
-*/
