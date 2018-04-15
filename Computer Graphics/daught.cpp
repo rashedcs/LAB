@@ -1,59 +1,4 @@
-
-
-/*
-static void display(void)
-{
-    const double t = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
-    const double a = t*90.0;
-
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glColor3d(1,0,0);
-
-    glPushMatrix();
-        glTranslated(-2.4,1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutSolidSphere(1,slices,stacks);
-    glPopMatrix();
-
-    glPushMatrix();
-        glTranslated(0,1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutSolidCone(1,1,slices,stacks);
-    glPopMatrix();
-
-    glPushMatrix();
-        glTranslated(2.4,1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutSolidTorus(0.2,0.8,slices,stacks);
-    glPopMatrix();
-
-    glPushMatrix();
-        glTranslated(-2.4,-1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutWireSphere(1,slices,stacks);
-    glPopMatrix();
-
-    glPushMatrix();
-        glTranslated(0,-1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutWireCone(1,1,slices,stacks);
-    glPopMatrix();
-
-    glPushMatrix();
-        glTranslated(2.4,-1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutWireTorus(0.2,0.8,slices,stacks);
-    glPopMatrix();
-
-    glutSwapBuffers();
-}
-*/#include<bits/stdc++.h>
+#include<bits/stdc++.h>
 #include <windows.h>
 #include <GL\glut.h>
 
@@ -212,3 +157,60 @@ int main(int argc, char** argv)
         glutMainLoop();
         return 0;
 }
+
+
+
+/*
+static void display(void)
+{
+    const double t = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
+    const double a = t*90.0;
+
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glColor3d(1,0,0);
+
+    glPushMatrix();
+        glTranslated(-2.4,1.2,-6);
+        glRotated(60,1,0,0);
+        glRotated(a,0,0,1);
+        glutSolidSphere(1,slices,stacks);
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslated(0,1.2,-6);
+        glRotated(60,1,0,0);
+        glRotated(a,0,0,1);
+        glutSolidCone(1,1,slices,stacks);
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslated(2.4,1.2,-6);
+        glRotated(60,1,0,0);
+        glRotated(a,0,0,1);
+        glutSolidTorus(0.2,0.8,slices,stacks);
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslated(-2.4,-1.2,-6);
+        glRotated(60,1,0,0);
+        glRotated(a,0,0,1);
+        glutWireSphere(1,slices,stacks);
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslated(0,-1.2,-6);
+        glRotated(60,1,0,0);
+        glRotated(a,0,0,1);
+        glutWireCone(1,1,slices,stacks);
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslated(2.4,-1.2,-6);
+        glRotated(60,1,0,0);
+        glRotated(a,0,0,1);
+        glutWireTorus(0.2,0.8,slices,stacks);
+    glPopMatrix();
+
+    glutSwapBuffers();
+}
+*/
