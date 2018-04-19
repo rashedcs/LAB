@@ -1,9 +1,8 @@
-
-                                                                                                                                                                                      
-
 .MODEL SMALL
 .STACK 2000
 .DATA
+                                                                                                                                                                                      
+
 
 MSGA DB 13,10,"Input first number: ","$"
 MSGB DB 13,10,"Input second number: ","$"
