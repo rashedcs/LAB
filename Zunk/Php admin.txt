@@ -1,3 +1,0 @@
-Php Admin Panel : http://artatm.com/2012/08/18-free-backend-admin-panel-and-dashboard-templates/
-
-Grav Admin : https://github.com/getgrav/grav-plugin-admin
