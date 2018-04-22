@@ -2,7 +2,7 @@
 #include <windows.h>
 #include <GL/glut.h>
 
-#define pi (2*acos(0.0))
+#define pi  3.14159
 
 double cameraHeight;
 double cameraAngle;
@@ -12,12 +12,12 @@ double angle;
 
 double map_angle;
 double Block_size=40;
-double Block_distance=38,size_cube=38;
+double Block_distance=39, size_cube=39;
 int slices_spehere=30, stacks_spehere=30;
 int segments_cylinder=24;
 double temp=0;
 double move_pos=2;
-double ar=0, ar1=0,ar2=0;
+double var=0,  var1=0, var2=0;
 
 struct point
 {
@@ -49,96 +49,81 @@ void drawAxes()
 
 void drawSquare(double a)
 {
-    ///glColor3f(1.0,0.0,0.0);
-	glBegin(GL_QUADS);{
+	glBegin(GL_POLYGON);
 		glVertex3f( a, a,0);
 		glVertex3f( a,-a,0);
 		glVertex3f(-a,-a,0);
 		glVertex3f(-a, a,0);
-	}glEnd();
+	glEnd();
 }
 
 
-void drawCircle(double radius,int segments,int cnum)
+
+void Xaxisrotation()
 {
-    int i;
-    struct point points[100];
-    glColor3f(1.0,0.0,1.0);
-    //generate points
-    for(i=0;i<=segments;i++)
-    {
-        points[i].x=radius*cos(((double)i/(double)segments)*2*pi);
-        points[i].y=radius*sin(((double)i/(double)segments)*2*pi);
-    }
-    //draw segments using generated points
-    for(i=0;i<segments;i++)
-    {
-        glBegin(GL_LINES);
-        {
-			glVertex3f(points[i].x,points[i].y,0);
-			glVertex3f(points[i+1].x,points[i+1].y,0);
-        }
-        glEnd();
-    }
-
+    glPushMatrix();
+        glColor3f(0,1,0);
+        glRotatef(var1,1,0,0);
+        glTranslatef(0,45,0);
+        drawSquare(11);
+        var1 = var1 +.50;
+    glPopMatrix();
 }
 
-void display(){
+void Yaxisrotation()
+{
+    glPushMatrix();
+        glColor3f(1,0,1);
+        glRotatef(var2,0,1,0);
+        glTranslatef(60, 0, 0);
+        drawSquare(11);
+        var2 = var2 + 0.50;
+    glPopMatrix();
+}
 
-	//clear the display
+void Zaxisrotation()
+{
+    glPushMatrix();
+        glColor3f(1,1,0);
+        glRotatef(var, 0,0,1);
+        glTranslatef(15,0,0);
+        drawSquare(11);
+        var = var + .50;
+    glPopMatrix();
+}
+
+
+
+
+void drawShape()
+{
+    Xaxisrotation();
+	Yaxisrotation();
+	Zaxisrotation();
+}
+
+
+void display()
+{
+	/******************** clear the buffer ********************/
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glClearColor(0,0,0,0);	//color black
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	/********************
-	/ set-up camera here
-	********************/
-	glMatrixMode(GL_MODELVIEW);
 
+	/******************** set-up camera here ********************/
+	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
 
 	gluLookAt(pos.x, pos.y, pos.z,     pos.x + l.x,pos.y + l.y, pos.z + l.z,     u.x, u.y, u.z);
+	glMatrixMode(GL_MODELVIEW);  	//again select MODEL-VIEW
 
 
-	//again select MODEL-VIEW
-	glMatrixMode(GL_MODELVIEW);
-
-
-	/****************************
-	/ Add your objects from here
-	****************************/
-
+	/**************************** Add your objects from here ****************************/
 	drawAxes();
+    drawShape();
 
-    glPushMatrix();
-    {
-        glColor3f(1.0,0.0,0.0);
-        glRotatef(ar,0,0,1);
-        glTranslatef(10,0,0);
-        drawSquare(10);
-        ar+=.5;
-    }glPopMatrix();
-
-    drawCircle(30,24,0);
-
-    glPushMatrix();
-    {
-        glColor3f(0.0,1.0,0.0);
-        glRotatef(ar1,1,0,0);
-        glTranslatef(0,40,0);
-        drawSquare(10);
-        ar1+=.06;
-    }glPopMatrix();
-
-    glPushMatrix();
-    {
-        glColor3f(0.0,0.0,1.0);
-        glRotatef(ar2,0,1,0);
-        glTranslatef(60,0,0);
-        drawSquare(10);
-        ar2+=.05;
-    }glPopMatrix();
 
 	glutSwapBuffers();
 }
@@ -180,23 +165,16 @@ void init()
 	glClearColor(0,0,0,0);
 
 
-	/************************
-	/ set-up projection here
-	************************/
-	//load the PROJECTION matrix
-	glMatrixMode(GL_PROJECTION);
-
-	//initialize the matrix
-	glLoadIdentity();
-
-	//give PERSPECTIVE parameters
-	gluPerspective(80,	1,	1,	1000.0);
-	//field of view in the Y (vertically)
-	//aspect ratio that determines the field of view in the X direction (horizontally)
-	//near distance
-	//far distance
+	/************************  set-up projection here ************************/
+	glMatrixMode(GL_PROJECTION); 	//load the PROJECTION matrix
+	glLoadIdentity();                         	//initialize the matrix
+	gluPerspective(80,	1,	1,	1000.0);  	//give PERSPECTIVE parameters
 }
-void specialKeyListener(int key, int x,int y){
+
+
+
+void specialKeyListener(int key, int x,int y)
+{
 	switch(key){
 		case GLUT_KEY_DOWN:		//down arrow key
 			//cameraHeight -= 3.0;
@@ -267,7 +245,7 @@ int main(int argc, char **argv)
 	glutInitWindowSize(500, 500);
 	glutInitWindowPosition(0, 0);
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGB);
-	glutCreateWindow("My OpenGL Program");
+	glutCreateWindow("Lab 1");
 
 	init();
 
