@@ -7,13 +7,16 @@ double f (double x)
 }
 double secant()
 {
-    double a=2, b=3, c; //x0=a, x1=b;
+    double a=2, b=3, c, p=INT_MAX; //p preserve the c´s value
  
-    while(fabs(b-a)>=EPS)
+
+    while(fabs(a-p)>=EPS)
     {
+        p = c;
         c=(a*f(b)-b*f(a)) / (f(b)-f(a));
-        a=b;
-        b=c;
+        if(f(c)<0) a=c;
+        else       b=c;
+        cout<<a<<" "<<b<<endl;
     }
     return c ;
 }
