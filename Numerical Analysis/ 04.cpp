@@ -7,10 +7,10 @@ double f (double x)
 }
 double secant()
 {
-    double a=2, b=3, c, p=INT_MAX; //p preserve the c´s value
+    double a=2, b=3, c=INT_MIN, p=INT_MAX; //p preserve the c´s value
  
 
-    while(fabs(a-p)>=EPS)
+    while(fabs(c-p)>=EPS)
     {
         p = c;
         c=(a*f(b)-b*f(a)) / (f(b)-f(a));
