@@ -6,3 +6,5 @@ clauses
 		N1=N-1,
 		sum(N1,R1),
 		R=R1+N.
+		
+		
