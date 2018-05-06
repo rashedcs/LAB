@@ -7,3 +7,5 @@ clauses
 	max(X,Y,_).
 	max(X,Y,X):- X>Y,!,
 	max(X,Y,Y).
+	
+	
