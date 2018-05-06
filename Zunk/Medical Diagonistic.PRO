@@ -32,7 +32,7 @@ clauses
         write("Does ",Patient," have a headache (y/n) ?"),
         response(Reply),
         Reply='y'.
-    
+      
     symptom(Patient,runny_nose) :-
         write("Does ",Patient," have a runny_nose (y/n) ?"),
         response(Reply),
