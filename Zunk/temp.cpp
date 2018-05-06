@@ -42,14 +42,14 @@ void drawAxes()
 }
 
 
-/*** 1st portion of hand ***/
+/*** upper portion of hand ***/
 void firstPortion(int radius)
 {
     glPushMatrix();
       glColor3f(1.0, 1.0, 0);
         glRotatef(fullHand_angle, 0,1,0);
         glRotatef(backMove_angle, 1,0,0);
-        glTranslatef(0.0,0, -(5*radius));
+        glTranslatef(0.0,0, -(5*radius)); // turn into (0,0) point
 
         glScalef(1, 1, 5);
         glutSolidSphere(radius,16,16);
@@ -57,7 +57,7 @@ void firstPortion(int radius)
 
 }
 
-/*** 2nd portion of hand ***/
+/*** lower portion of hand ***/
 void secondPortion(int radius)
 {
     glPushMatrix();
@@ -67,7 +67,7 @@ void secondPortion(int radius)
        glTranslatef(0.0,0, -(2*(5*radius)));
 
         glRotatef(lowerPart_angle,0,1,0);
-        glTranslatef(0,0,-5*(radius-4));
+        glTranslatef(0,0,-5*(radius-4)); // turn into (0,0) point
 
         glScalef(1,1,5);
         glutSolidSphere(radius-4,16,16);
@@ -75,7 +75,7 @@ void secondPortion(int radius)
 }
 
 
-/*** 3rd portion of hand ***/
+/*** palm portion of hand ***/
 void thirdPortion(int radius)
 {
     glPushMatrix();
@@ -88,7 +88,7 @@ void thirdPortion(int radius)
 
         glTranslatef(0,0,-30);  // turn into (0,0) point
         glBegin(GL_POLYGON);
-            glVertex3f(0,20,0);  //base=2*20
+            glVertex3f(0,20,0);  // Palm base=2*20
             glVertex3f(0,-20,0);
             glVertex3f(0,0,30);  //Palm Height=30
         glEnd();
@@ -97,6 +97,7 @@ void thirdPortion(int radius)
 
 }
 
+/*** foot portion of hand ***/
 void fourPortion(int radius)
 {
        glPushMatrix();
@@ -108,10 +109,9 @@ void fourPortion(int radius)
                  glRotatef(lowerPart_angle,0,1,0);
                  glTranslatef(0,0,-(2*5*(radius-4)));   //length of lower part
 
-
                  glTranslatef(0,0, -30);  //height of triangle
                  glRotatef(middleFinger_angle,0,1,0);
-                 glTranslatef(0, 0, -3*(radius-6)); //(0,0) te niye ashlam
+                 glTranslatef(0, 0, -3*(radius-6)); //turn to (0,0) point
                  glScalef(1, 1, 3);
 
                  glutWireSphere(radius-6,16,16);
@@ -128,7 +128,7 @@ void fourPortion(int radius)
 
                  glTranslatef(0,0, -30);  //height of triangle
                  glRotatef(leftFinger_angle,0,1,0);
-                 glTranslatef(0, -20, -3*(radius-6)); //(0,0) te niye ashlam
+                 glTranslatef(0, -20, -3*(radius-6));  //turn to (0,0) point
                  glScalef(1, 1, 3);
 
                 glutWireSphere(radius-6,16,16);
@@ -145,7 +145,7 @@ void fourPortion(int radius)
 
                  glTranslatef(0,0, -30);  //height of triangle
                  glRotatef(rigthFinger_angle,0,1,0);
-                 glTranslatef(0, 20, -3*(radius-6)); //(0,0) te niye ashlam
+                 glTranslatef(0, 20, -3*(radius-6)); //turn to (0,0) point
                  glScalef(1, 1, 3);
                 glutWireSphere(radius-6,16,16);
          glPopMatrix();
@@ -174,7 +174,7 @@ void keyboardListener(unsigned char key, int x,int y)
 	{
 		case '1':
 		    fullHand_angle-=2;
-		    if (fullHand_angle>45)            fullHand_angle = 45;
+		    if (fullHand_angle>45)              fullHand_angle = 45;
             else if (fullHand_angle<-45)    fullHand_angle = -45;
 			break;
 
