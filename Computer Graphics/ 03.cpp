@@ -24,15 +24,15 @@ void drawAxes()
 {
 
 		glBegin(GL_LINES);
-		glColor3f(1.0, 1.0, 0.0);
+		        glColor3f(1.0, 1.0, 0.0);
 			glVertex3f( 100,0,0);
 			glVertex3f(-100,0,0);
 
-            glColor3f(1.0, 1.0, 1.0);
+          	        glColor3f(1.0, 1.0, 1.0);
 			glVertex3f(0,-100,0);
 			glVertex3f(0, 100,0);
 
-	glColor3f(1.0, 1.0, 1.0);
+	                glColor3f(1.0, 1.0, 1.0);
 			glVertex3f(0,0, 100);
 			glVertex3f(0,0,-100);
 		glEnd();
@@ -58,12 +58,11 @@ void firstPortion(int radius)
 void secondPortion(int radius)
 {
     glPushMatrix();
-       /** Allocate first portion **/
         glRotatef(fullHand_angle,0,1,0);
         glRotatef(backMove_angle,1,0,0);
         glTranslatef(0.0,0, -(2*(5*radius)));
 
-        /**start second portion **/
+
         glRotatef(lowerPart_angle,0,1,0);
         glTranslatef(0,0,-5*(radius-4)); ///(0,0) te niye asha hoyeche
 
@@ -89,17 +88,16 @@ void thirdPortion(int radius)
 
     ///translate = - (length of upper and lower part + height of triangle)
 
-    /**start third portion **/
+
         glTranslatef(0,0,-30);  // (0,0) point a niye ashlam
         /*
-        glBegin(GL_POLYGON);
+         glBegin(GL_POLYGON);
             glVertex3f(0,20,0);  //base=2*20
             glVertex3f(0,-20,0);
             glVertex3f(0,0,30);  //Palm Height=30
-        glEnd();
-    glPopMatrix();
-    */
-     glColor3f(1.0, 0.0, 0.0);
+          glEnd();
+       */
+        glColor3f(1.0, 0.0, 0.0);
         glBegin(GL_LINES);
 	   glVertex3f (0, 20, 0.0);
 	   glVertex3f (0, -20, 0.0);
@@ -113,10 +111,6 @@ void thirdPortion(int radius)
 void drawFullHand()
 {
     int radius=10;
-   // int scale=5;
-   // int translate = -scale*radius;
-  //glTranslatef(0,0,-160);
-
     firstPortion(radius);
     secondPortion(radius);
     thirdPortion(radius);
@@ -127,29 +121,29 @@ void keyboardListener(unsigned char key, int x,int y)
 {
 	switch(key)
 	{
-		case '1':
+	        case '1':
 		    fullHand_angle-=2;
 		    if (fullHand_angle>45)            fullHand_angle = 45;
-            else if (fullHand_angle<-45)    fullHand_angle = -45;
-			break;
+                    else if (fullHand_angle<-45)    fullHand_angle = -45;
+	            break;
 
-        case '2':
-            fullHand_angle+=2;
-            if (fullHand_angle>45)            fullHand_angle = 45;
-            else if (fullHand_angle<-45)    fullHand_angle = -45;
-            break;
+		case '2':
+		    fullHand_angle+=2;
+		    if (fullHand_angle>45)            fullHand_angle = 45;
+		    else if (fullHand_angle<-45)    fullHand_angle = -45;
+		    break;
 
-        case '3':
-            lowerPart_angle-=2;
-            if(lowerPart_angle<-90)           lowerPart_angle =-90;
-            else if(lowerPart_angle>0)      lowerPart_angle=0;
-            break;
+	        case '3':
+		    lowerPart_angle-=2;
+		    if(lowerPart_angle<-90)           lowerPart_angle =-90;
+		    else if(lowerPart_angle>0)      lowerPart_angle=0;
+		    break;
 
-        case '4':
-            lowerPart_angle+=2;
-            if(lowerPart_angle<-90)          lowerPart_angle=-90;
-            else if(lowerPart_angle>0)      lowerPart_angle=0;
-            break;
+	        case '4':
+		    lowerPart_angle+=2;
+		    if(lowerPart_angle<-90)          lowerPart_angle=-90;
+		    else if(lowerPart_angle>0)       lowerPart_angle=0;
+		    break;
 	}
 }
 
@@ -157,10 +151,10 @@ void keyboardListener(unsigned char key, int x,int y)
 void specialKeyListener(int key, int x,int y)
 {
 	switch(key){
-		case GLUT_KEY_DOWN:		//down arrow key
+		case GLUT_KEY_DOWN:		
 			cameraHeight -= 3.0;
 			break;
-		case GLUT_KEY_UP:		// up arrow key
+		case GLUT_KEY_UP:	
 			cameraHeight += 3.0;
 			break;
 
@@ -169,9 +163,6 @@ void specialKeyListener(int key, int x,int y)
 			break;
 		case GLUT_KEY_LEFT:
 			cameraAngle -= 0.03;
-			break;
-
-		case GLUT_KEY_INSERT:
 			break;
 
 		case GLUT_KEY_HOME:
@@ -204,8 +195,8 @@ void display()
 
 	/********************  add object ********************/
 	drawAxes();
-    glColor3f(0.5,0.5,0.5);
-    drawFullHand();
+        glColor3f(0.5,0.5,0.5);
+        drawFullHand();
 
 
 	glutSwapBuffers();
