@@ -1,10 +1,20 @@
-predicates
+ %predicates%
  like(symbol,symbol)
  hate(symbol,symbol)
-clauses
- like(sita,ram).
- like(x,y).
- like(a,b).
 
+%clauses%
+ like(sita,ram).
+ like(x,z).
+ like(a,b).
  hate(c,d).
- hate(m,n).
+ 
+ 
+ 
+
+
+
+Goal : 
+?- like(sita,ram).
+true
+
+
