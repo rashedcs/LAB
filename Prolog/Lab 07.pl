@@ -42,21 +42,34 @@ main:-
      
 
 
+2nd way :
+
+main:-
+	 getinput(Name,Password),
+	 write("You successful").
+
+main:-	 
+     repeat,
+	 write("You Try"),nl,
+	 getinput(_,_),
+	 write("You Snsuccessful"), !.
 
 
 
+getinput(Name,Password):-
+        readln(Name),
+        readln(Password).
+        user(Name,Password).
+
+
+user(John, 123).
+
+
+
+
+
+
+     
 
 
   
-
-go:-
-    write("Enter user name and password\n"),
-    readln(User),
-    readln(Pass),
-    login(User,Pass),
-    write("Login sucessful\n").
-go:-
-    write("Login unsucessful\n"),
-    go.
-login(dharmik,123).
-login(nihar,456).
