@@ -1,5 +1,4 @@
-
-       student(symbol,symbol, integer)
+student(symbol,symbol, integer)
        choice(integer)
 
 
@@ -10,28 +9,21 @@
 
 
     choice(1):-
-        read(name),nl,
+        readint(name),nl,
         student(name,zilla,num),
-        write(name),
-        write(" "), 
-        write(zilla), 
-        write(" "), 
-        write(num),
+        write(name), write(" "), write(zilla), write(" "), write(num),
         fail.
 
     choice(2):-
-        read(num),nl,
+        readint(num),nl,
         student(name,zilla,num),
-        write(num), write(" "), 
-        write(zilla), 
-        write(" "),
-         write(name),
+        write(name), write(" "), write(zilla), write(" "), write(num),
         fail.
 
     choice(0) :- !.
 
-    goal:-
 
+    goal:-
        repeat,
         write("1. Search by name"),nl,
         write("2. Search by num"),nl,
