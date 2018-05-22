@@ -3,29 +3,32 @@ user(baki,456).
 user(masum,456).
 user(hakkani,123).
 
-
-getinput(User,Pass) :-
-	read(User),nl,
-	read(Pass),nl.
-
+getinput(Name,Password) :-
+	read(Name),nl,
+	read(Password),nl,
+	user(Name,Password).
 
 attempt(_) :-
-	getinput(User,Pass),
-	user(User,Pass),
+	getinput(_,_),
 	write("You are now logged on."),nl.
 
-attempt(X) :-
-	write("Wrong username or password"),nl,
-	M = X-1,
-	attempt(M).
+attempt(N) :-
+	write("Sorry, you are not permitted access."),nl,
+	write("Please try again."),nl,
+	getinput(_,_),
+	write("You are now logged on."),nl,
+	M is N-1.
+attempt(M).
 
 attempt(0) :-
-	write("Sorry, you are not permitted access.").	
+	write("Sorry, you are not permitted access.").
 
 
-main :-
-	attempt(3).
+main:-
+  attempt(5).
 
+
+%Daught : https://ideone.com/lEZmXy
 
 
 
