@@ -11,3 +11,6 @@ brother(X,Y):- male(X), parent(X,Z), parent(Y,Z).
 Goal :
 ?- brother(raihan,jui).
  True
+ 
+ 
+ link:http://www.dailyfreecode.com/Code/prolog-find-relations-family-3025.aspx
