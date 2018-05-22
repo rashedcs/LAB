@@ -29,14 +29,3 @@ main:-
 
 
 %Daught : https://ideone.com/lEZmXy
-
-
-
-
-
-
-
-     
-
-
-  
