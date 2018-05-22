@@ -28,4 +28,4 @@ main:-
   attempt(5).
 
 
-%Daught : https://ideone.com/lEZmXy
+%Daught : https://ideone.com/lEZmXy  
