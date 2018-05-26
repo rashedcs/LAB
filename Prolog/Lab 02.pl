@@ -4,6 +4,8 @@ male(raihan).
 female(jui).
 
 brother(X,Y):- male(X), parent(X,Z), parent(Y,Z).
+sister(X,Y):- female(X), parent(X,Z), parent(Y,Z).
+
 
 
 
