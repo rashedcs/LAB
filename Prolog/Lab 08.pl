@@ -1,48 +1,93 @@
 go:-
-    read(Patient),
+    %write("What is the patient's name? "),
+    read(Patient),nl,
     hypothesis(Patient, Disease),
     write(Patient),
-    %write(" probably has "),
-    write(Disease),
-    write("."),nl.
+    write(" probably has "),
+    write(Disease), nl.
 
 go:-
     write("Sorry, I don't seem to be able to"),
     write(" diagnose the disease."),nl.
 
 symptom(Patient, fever):-
-    %write("Does "),
+   %write("Does "),
     write(Patient),
-    %write(" have a fever (y/n)? "),
-    response(Reply),
-    Reply='y'.y.
-    
-
-symptom(Patient, rash):-
-    %write("Does "),
-    write(Patient),
-    %write(" have a rash (y/n)? "),
+   %write(" have a fever (y/n)? "),
     response(Reply),
     Reply='y'.
 
 symptom(Patient, headache):-
-   % write("Does "),
+    %write("Does "),
     write(Patient),
     %write(" have a headache (y/n)? "),
     response(Reply),
     Reply='y'.
 
+
 symptom(Patient, runny_nose):-
     %write("Does "),
     write(Patient),
-   %write(" have a runny nose (y/n)? "),
+    %write(" have a runny nose (y/n)? "),
+    response(Reply),
+    write("has "),
+    Reply='y'.
+
+symptom(Patient, rash):-
+   %write("Does "),
+    write(Patient),
+   %write(" have a rash (y/n)? "),
     response(Reply),
     Reply='y'.
+
+
 
 symptom(Patient, conjunctivitis):-
     %write("Does "),
     write(Patient),
     %write(" have a conjunctivitis (y/n)? "),
+    response(Reply),
+    Reply='y'.
+
+symptom(Patient, cough):-
+    %write("Does "),
+    write(Patient),
+    %write(" have a cough (y/n)? "),
+    response(Reply),
+    Reply='y'.
+
+symptom(Patient, body_ache):-
+    %write("Does "),
+    write(Patient),
+    %write(" have a body ache (y/n)? "),
+    response(Reply),
+    Reply='y'.
+
+symptom(Patient, chills):-
+    %write("Does "),
+    write(Patient),
+    %write(" have a chills (y/n)? "),
+    response(Reply),
+    Reply='y'.
+
+symptom(Patient, sore_throat):-
+    %write("Does "),
+    write(Patient),
+    %write(" have a sore throat (y/n)? "),
+    response(Reply),
+    Reply='y'.
+
+symptom(Patient, sneezing):-
+    %write("Does "),
+    write(Patient),
+    %write(" have a sneezing (y/n)? "),
+    response(Reply),
+    Reply='y'.
+
+symptom(Patient, swollen_glands):-
+    %write("Does "),
+    write(Patient),
+    %write(" have a swollen glands (y/n)? "),
     response(Reply),
     Reply='y'.
 
@@ -90,7 +135,6 @@ hypothesis(Patient, 'Whooping Cough'):-
     symptom(Patient, cough),
     symptom(Patient, sneezing),
     symptom(Patient, runny_nose).
-
 
 response(Reply):-
     read(Reply),
