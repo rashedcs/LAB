@@ -102,25 +102,23 @@ void drawShape()
 	Zaxisrotation();
 }
 
-
 void display()
 {
-	/******************** clear the buffer ********************/
+
+	/********************  clean the display  ********************/
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glClearColor(0,0,0,0);	//color black
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 
-	/******************** set-up camera here ********************/
+	/********************  set-up camera here  ********************/
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
+	gluLookAt(200*cos(cameraAngle), 200*sin(cameraAngle), cameraHeight,		0,0,0,		0,0,1);
+	glMatrixMode(GL_MODELVIEW);
 
 
-	gluLookAt(pos.x, pos.y, pos.z,     pos.x + l.x,pos.y + l.y, pos.z + l.z,     u.x, u.y, u.z);
-	glMatrixMode(GL_MODELVIEW);  	//again select MODEL-VIEW
-
-
-	/**************************** Add your objects from here ****************************/
+	/********************  add object ********************/
 	drawAxes();
     drawShape();
 
@@ -137,6 +135,7 @@ void animate()
 
 void init()
 {
+    /*
 	drawgrid=0;
 	drawaxes=1;
 	cameraHeight=150.0;
@@ -163,16 +162,30 @@ void init()
 
 	map_angle=90;
 	glClearColor(0,0,0,0);
-
+*/
 
 	/************************  set-up projection here ************************/
 	glMatrixMode(GL_PROJECTION); 	//load the PROJECTION matrix
 	glLoadIdentity();                         	//initialize the matrix
 	gluPerspective(80,	1,	1,	1000.0);  	//give PERSPECTIVE parameters
+
+
+		drawaxes=1;
+	cameraHeight=80.0;
+	cameraAngle=1.0;
+	angle=0;
+
+	glClearColor(0,0,0,0);
+
+	/************************ set-up projection here ********************/
+    glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluPerspective(80,	1,	1,	1000.0);
+
 }
 
 
-
+/*
 void specialKeyListener(int key, int x,int y)
 {
 	switch(key){
@@ -237,6 +250,32 @@ void specialKeyListener(int key, int x,int y)
 			break;
 	}
 }
+*/
+void specialKeyListener(int key, int x,int y)
+{
+	switch(key){
+		case GLUT_KEY_DOWN:
+			cameraHeight -= 3.0;
+			break;
+		case GLUT_KEY_UP:
+			cameraHeight += 3.0;
+			break;
+
+		case GLUT_KEY_RIGHT:
+			cameraAngle += 0.03;
+			break;
+		case GLUT_KEY_LEFT:
+			cameraAngle -= 0.03;
+			break;
+
+		case GLUT_KEY_HOME:
+			break;
+
+		default:
+			break;
+	}
+}
+
 
 
 int main(int argc, char **argv)
