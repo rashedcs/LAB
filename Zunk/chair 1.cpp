@@ -54,7 +54,9 @@ void nKeys(unsigned char key, int x, int y)
 {
     switch(key)
     {
-
+    case 27:
+        exit(0);
+        break;
     case 'd':
         glRotatef(30*degree, 1, 0, 0);
         break;
@@ -94,14 +96,6 @@ void display()
     drawCube(4.0f, 0.0f, 4.0f, 1.0f, 1.0f, 5.0f, 1.0f,0.0f,0.0f);
     drawCube(0.0f, 0.0f, 4.0f, 1.0f, 1.0f, 5.0f, 0.0f,1.0f,0.0f);
     drawCube(0.0f, 5.0f, 0.0f, 5.0f, 5.0f, 1.0f, 1.0f,1.0f,0.0f);
-    drawCube(0.0f, 6.0f, 0.0f, 1.0f, 5.0f, 5.0f, 1.0f,0.5f,0.5f);
-
-
-    drawCube(12.0f, 0.0f, 12.0f, 1.0f, 1.0f, 5.0f, 0.0f,0.0f,1.0f);
-    drawCube(17.0f, 0.0f, 12.0f, 1.0f, 1.0f, 5.0f, 0.0f,1.0f,1.0f);
-    drawCube(17.0f, 0.0f, 17.0f, 1.0f, 1.0f, 5.0f, 1.0f,0.0f,0.0f);
-    drawCube(12.0f, 0.0f, 17.0f, 1.0f, 1.0f, 5.0f, 0.0f,1.0f,0.0f);
-    drawCube(12.0f, 5.0f, 12.0f, 6.0f, 6.0f, 1.0f, 1.0f,1.0f,0.0f);
     drawCube(0.0f, 6.0f, 0.0f, 1.0f, 5.0f, 5.0f, 1.0f,0.5f,0.5f);
 
     glutSwapBuffers();
