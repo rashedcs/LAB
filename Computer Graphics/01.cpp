@@ -97,7 +97,7 @@ void Zaxisrotation()
 
 void drawShape()
 {
-    Xaxisrotation();
+        Xaxisrotation();
 	Yaxisrotation();
 	Zaxisrotation();
 }
@@ -114,14 +114,13 @@ void display()
 	/********************  set-up camera here  ********************/
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	gluLookAt(200*cos(cameraAngle), 200*sin(cameraAngle), cameraHeight,		0,0,0,		0,0,1);
+	gluLookAt(200*cos(cameraAngle), 200*sin(cameraAngle), cameraHeight, 0,0,0,	0,0,1);
 	glMatrixMode(GL_MODELVIEW);
 
 
 	/********************  add object ********************/
 	drawAxes();
-    drawShape();
-
+        drawShape();
 
 	glutSwapBuffers();
 }
@@ -135,122 +134,27 @@ void animate()
 
 void init()
 {
-    /*
-	drawgrid=0;
-	drawaxes=1;
-	cameraHeight=150.0;
-	cameraAngle=1.0;
-	angle=0;
-
-	u.x=0;
-    u.y=0;
-    u.z=1;
-
-
-    r.x=-1/sqrt(2);
-    r.y=1/sqrt(2);
-    r.z=0;
-
-    l.x=-1/sqrt(2) ;
-    l.y=-1/sqrt(2) ;
-    l.z=0;
-
-    pos.x=100;
-    pos.y=100;
-    pos.z=0;
-
-
-	map_angle=90;
-	glClearColor(0,0,0,0);
-*/
-
 	/************************  set-up projection here ************************/
 	glMatrixMode(GL_PROJECTION); 	//load the PROJECTION matrix
 	glLoadIdentity();                         	//initialize the matrix
 	gluPerspective(80,	1,	1,	1000.0);  	//give PERSPECTIVE parameters
 
 
-		drawaxes=1;
+	drawaxes=1;
 	cameraHeight=80.0;
 	cameraAngle=1.0;
 	angle=0;
-
 	glClearColor(0,0,0,0);
 
+	
 	/************************ set-up projection here ********************/
-    glMatrixMode(GL_PROJECTION);
+        glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluPerspective(80,	1,	1,	1000.0);
+	gluPerspective(80, 1, 1, 1000.0);
 
 }
 
 
-/*
-void specialKeyListener(int key, int x,int y)
-{
-	switch(key){
-		case GLUT_KEY_DOWN:		//down arrow key
-			//cameraHeight -= 3.0;
-			pos.x-=l.x*move_pos;
-			pos.y-=l.y*move_pos;
-			pos.z-=l.z*move_pos;
-
-			break;
-		case GLUT_KEY_UP:		// up arrow key
-			//cameraHeight += 3.0;
-			pos.x+=l.x*move_pos;
-			pos.y+=l.y*move_pos;
-			pos.z+=l.z*move_pos;
-			break;
-
-		case GLUT_KEY_RIGHT:
-			//cameraAngle += 0.03;
-			pos.x+=r.x*move_pos;
-			pos.y+=r.y*move_pos;
-			pos.z+=r.z*move_pos;
-			break;
-		case GLUT_KEY_LEFT:
-			//cameraAngle -= 0.03;
-			pos.x-=r.x*move_pos;
-			pos.y-=r.y*move_pos;
-			pos.z-=r.z*move_pos;
-
-			break;
-
-		case GLUT_KEY_PAGE_UP:
-		    pos.x+=u.x*move_pos;
-			pos.y+=u.y*move_pos;
-			pos.z+=u.z*move_pos;
-			break;
-		case GLUT_KEY_PAGE_DOWN:
-            pos.x-=u.x*move_pos;
-			pos.y-=u.y*move_pos;
-			pos.z-=u.z*move_pos;
-			break;
-
-		case GLUT_KEY_INSERT:
-			break;
-
-		case GLUT_KEY_HOME:
-		    if(Block_size>0)
-            {
-                Block_size-=5;
-                temp+=5;
-            }
-			break;
-		case GLUT_KEY_END:
-            if(Block_size<size_cube)
-            {
-                Block_size+=5;
-                temp-=5;
-            }
-			break;
-
-		default:
-			break;
-	}
-}
-*/
 void specialKeyListener(int key, int x,int y)
 {
 	switch(key){
