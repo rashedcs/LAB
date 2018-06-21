@@ -1,4 +1,4 @@
-/* Euler Method */
+/** Euler Method **/
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -26,9 +26,14 @@ int main()
 {
     double x0, y0, xn, h, k;
     
-    printf("\nEnter x0, y0, h, xn: ");
     scanf("%lf %lf %lf %lf",&x0,&y0,&h,&xn);
-    
     euler(x0, y0, h, xn);
+    
     return 0;
 }
+
+/**
+ Input : 0 1 0.1 1
+ Output : 1.000	3.187
+
+**/
