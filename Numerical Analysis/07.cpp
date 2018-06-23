@@ -3,54 +3,43 @@ using namespace std;
 
 void solution(double arr[20][20], int n)
 {
-    double c, sum,  x[10];
-    /* loop for the generation of upper triangular matrix*/
-    for(int i=1; i<=n; i++) 
+
+    for(int i=1; i<=n; i++)
     {
         for(int j=1; j<=n; j++)
         {
-            if(i<j)
+            if(i!=j)
             {
-                c = arr[j][i]/arr[i][i];
+                double c=arr[j][i]/arr[i][i];
                 for(int k=1; k<=n+1; k++)
                 {
-                   arr[j][k] = arr[j][k]-c*arr[i][k];
+                    arr[j][k]=arr[j][k]-c*arr[i][k];
                 }
             }
         }
     }
-    x[n]=arr[n][n+1]/arr[n][n];
 
-    /* this loop is for backward substitution*/
-    for(int i=n-1; i>=1; i--)
-    {
-        sum=0;
-        for(int j=i+1; j<=n; j++)
-        {
-            cout<<i<<" "<<j<<endl;
-            sum += arr[i][j]*x[j];
-        }
-        x[i]=(arr[i][n+1]-sum)/arr[i][i];
-    }
-    printf("\nThe solution is: \n");
+    printf("\nSolutions : \n" );
+
     for(int i=1; i<=n; i++)
     {
-        printf("\nx%d=%f\t",i,x[i]); 
+        printf("\n x%d=%f\n",i, arr[i][n+1]/arr[i][i]);
     }
 }
 
 
-
 int main()
 {
-    int i,j,k,n;
+
+    int n;
     double arr[20][20];
-    scanf("%d",&n);
-    for(i=1; i<=n; i++)
+    scanf("%d", &n);
+
+    for(int i=1; i<=n; i++ )
     {
-        for(j=1; j<=(n+1); j++)
+        for(int j=1; j<=n+1; j++)
         {
-            scanf("%lf",&arr[i][j]);
+            scanf("%lf", &arr[i][j]);
         }
     }
     solution(arr, n);
