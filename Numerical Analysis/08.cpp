@@ -55,3 +55,19 @@ int main()
     
     return 0;
 }
+/**
+input and output :
+3
+1 1 1 6
+1 -1 1 2
+2 -1 3 9
+0 
+1 
+1 
+
+The solution is: 
+
+x1=1.000000	
+x2=2.000000	
+x3=3.000000	 
+**/
