@@ -4,13 +4,13 @@ using namespace std;
 
 double f(double x)
 {
-    return(1/(1+x));
+      return(1/(1+x));
 }
 
 double solution(double x0, double xn, double h)
 {
-	  int n = (xn-x0)/h;
-	  double x[10], y[10];
+    int n = (xn-x0)/h;
+    double x[10], y[10];
 
     for(int i=0; i<=n; i++)
     {
@@ -50,3 +50,8 @@ int main()
  
     return 0;
 }
+
+/**
+Input : 2 4 0.5
+Output : 0.510847 
+**/
