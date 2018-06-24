@@ -36,5 +36,5 @@
             scanf("%lf",&xi);
             printf("%lf",lagrange(x, y, n, xi));
 
-            return 0;
+            return 0; 
     }
