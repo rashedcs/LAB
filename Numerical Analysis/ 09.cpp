@@ -32,5 +32,5 @@
               scanf("%lf",&f);
               printf("%lf",newton(x, y, n, f));
 
-              return 0;
+              return 0; 
     }
