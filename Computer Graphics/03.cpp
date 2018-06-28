@@ -21,18 +21,18 @@ ll palm_angle;
 
 void drawAxes()
 {
-      glBegin(GL_LINES);
-		    glColor3f(1.0, 1.0, 0.0);
+      		glBegin(GL_LINES);
+		    	  glColor3f(1.0, 1.0, 0.0);
 			  glVertex3f( 100,0,0);
 			  glVertex3f(-100,0,0);
 
-            glColor3f(1.0, 1.0, 1.0);
+           		  glColor3f(1.0, 1.0, 1.0);
 			  glVertex3f(0,-100,0);
 			  glVertex3f(0, 100,0);
 
-	        glColor3f(1.0, 1.0, 1.0);
-			   glVertex3f(0,0, 100);
-			   glVertex3f(0,0,-100);
+			  glColor3f(1.0, 1.0, 1.0);
+			  glVertex3f(0,0, 100);
+			  glVertex3f(0,0,-100);
 		glEnd();
 }
 
@@ -41,7 +41,7 @@ void drawAxes()
 void firstPortion(int radius)
 {
     glPushMatrix();
-      glColor3f(1.0, 1.0, 0);
+        glColor3f(1.0, 1.0, 0);
         glRotatef(fullHand_angle, 0,1,0);
         glRotatef(backMove_angle, 1,0,0);
 
@@ -56,10 +56,10 @@ void firstPortion(int radius)
 void secondPortion(int radius)
 {
     glPushMatrix();
-      glColor3f(1.0, 1.0, 1.0);
-       glRotatef(fullHand_angle,0,1,0);
-       glRotatef(backMove_angle,1,0,0);
-       glTranslatef(0.0,0, -(2*(5*radius)));
+        glColor3f(1.0, 1.0, 1.0);
+        glRotatef(fullHand_angle,0,1,0);
+        glRotatef(backMove_angle,1,0,0);
+        glTranslatef(0.0,0, -(2*(5*radius)));
 
         glRotatef(lowerPart_angle,0,1,0);
 
@@ -81,11 +81,11 @@ void thirdPortion(int radius)
         glRotatef(lowerPart_angle,0,1,0);
         glTranslatef(0,0, -2*5*(radius-4));       // lower part  length   = 2 * lower part
 
-        glTranslatef(0,0,-30);  // turn into (0,0) point
+        glTranslatef(0,0,-30);     // turn into (0,0) point
         glBegin(GL_POLYGON);
-            glVertex3f(0,20,0);    //Palm base=2*20
+            glVertex3f(0,20,0);    // Palm base=2*20
             glVertex3f(0,-20,0);
-            glVertex3f(0,0,30);    //Palm Height=30
+            glVertex3f(0,0,30);    // Palm Height=30
         glEnd();
     glPopMatrix();
 
@@ -96,7 +96,8 @@ void thirdPortion(int radius)
 void fourPortion(int radius)
 {
        glPushMatrix();
-                glColor3f(1.0, 0.0, 0.0);
+	{
+                 glColor3f(1.0, 0.0, 0.0);
                  glRotatef(backMove_angle,1,0,0);
                  glRotatef(fullHand_angle,0,1,0);
                  glTranslatef(0.0,0,-(2*(5*radius)));    //length of upper part
@@ -110,6 +111,7 @@ void fourPortion(int radius)
                  glTranslatef(0, 0, -3*(radius-6)); //turn to (0,0) point
                  glScalef(1, 1, 3);
                  glutWireSphere(radius-6,16,16);
+	}
         glPopMatrix();
 
 
@@ -133,7 +135,7 @@ void fourPortion(int radius)
 
         glPushMatrix();
         {
-                glColor3f(1.0, 0.0, 0.0);
+                 glColor3f(1.0, 0.0, 0.0);
                  glRotatef(backMove_angle,1,0,0);
                  glRotatef(fullHand_angle,0,1,0);
                  glTranslatef(0.0,0,-(2*(5*radius)));    //length of upper part
@@ -146,8 +148,8 @@ void fourPortion(int radius)
 
                  glTranslatef(0, 20, -3*(radius-6)); //turn to (0,0) point
                  glScalef(1, 1, 3);
-                glutWireSphere(radius-6,16,16);
-        }
+                 glutWireSphere(radius-6,16,16);
+         }
          glPopMatrix();
 
 }
@@ -175,69 +177,60 @@ void keyboardListener(unsigned char key, int x,int y)
 		case '1':
 		    fullHand_angle-=2;
 		    if (fullHand_angle>45)  fullHand_angle = 45;
-            else if (fullHand_angle<-45)    fullHand_angle = -45;
-			break;
+                    else if (fullHand_angle<-45) fullHand_angle = -45;
+		    break;
 
-        case '2':
-            fullHand_angle+=2;
-            if (fullHand_angle>45)            fullHand_angle = 45;
-            else if (fullHand_angle<-45)    fullHand_angle = -45;
-            break;
+		case '2':
+		    fullHand_angle+=2;
+		    if (fullHand_angle>45)            fullHand_angle = 45;
+		    else if (fullHand_angle<-45)      fullHand_angle = -45;
+		    break;
 
         case '3':
             lowerPart_angle-=2;
             if(lowerPart_angle<-90)           lowerPart_angle =-90;
-            else if(lowerPart_angle>0)      lowerPart_angle=0;
+            else if(lowerPart_angle>0)        lowerPart_angle=0;
             break;
 
         case '4':
             lowerPart_angle+=2;
             if(lowerPart_angle<-90)          lowerPart_angle=-90;
-            else if(lowerPart_angle>0)      lowerPart_angle=0;
+            else if(lowerPart_angle>0)       lowerPart_angle=0;
             break;
 
-                    case '5':
-            rigthFinger_angle-=2;
-            if(rigthFinger_angle<-90)
-                rigthFinger_angle=-90;
-            else if(rigthFinger_angle>0)
-                rigthFinger_angle=0;
-            break;
-        case '6':
-            rigthFinger_angle+=2;
-            if(rigthFinger_angle<-90)
-                rigthFinger_angle=-90;
-            else if(rigthFinger_angle>0)
-                rigthFinger_angle=0;
-            break;
-        case '7':
-            middleFinger_angle-=2;
-            if(middleFinger_angle<-90)
-                middleFinger_angle=-90;
-            else if(middleFinger_angle>0)
-                middleFinger_angle=0;
-            break;
-        case '8':
-            middleFinger_angle+=2;
-            if(middleFinger_angle<-90)
-                middleFinger_angle=-90;
-            else if(middleFinger_angle>0)
-                middleFinger_angle=0;
-            break;
-        case '9':
-            leftFinger_angle-=2;
-            if(leftFinger_angle<-90)
-                leftFinger_angle=-90;
-            else if(leftFinger_angle>0)
-                leftFinger_angle=0;
-            break;
-        case '0':
-            leftFinger_angle+=2;
-            if(leftFinger_angle<-90)
-                leftFinger_angle=-90;
-            else if(leftFinger_angle>0)
-                leftFinger_angle=0;
-            break;
+       case '5':
+	    rigthFinger_angle-=2;
+	    if(rigthFinger_angle<-90)    rigthFinger_angle=-90;
+	    else if(rigthFinger_angle>0)   rigthFinger_angle=0;
+	    break;
+			
+	case '6':
+	    rigthFinger_angle+=2;
+	    if(rigthFinger_angle<-90) rigthFinger_angle=-90;
+	    else if(rigthFinger_angle>0) rigthFinger_angle=0;
+	    break;
+	case '7':
+	    middleFinger_angle-=2;
+	    if(middleFinger_angle<-90)  middleFinger_angle=-90;
+	    else if(middleFinger_angle>0)  middleFinger_angle=0;
+	    break;
+			
+	case '8':
+	    middleFinger_angle+=2;
+	    if(middleFinger_angle<-90) middleFinger_angle=-90;
+	    else if(middleFinger_angle>0) middleFinger_angle=0;
+	    break;
+	case '9':
+	    leftFinger_angle-=2;
+	    if(leftFinger_angle<-90) leftFinger_angle=-90;
+	    else if(leftFinger_angle>0) leftFinger_angle=0;
+	    break;
+			
+	case '0':
+	    leftFinger_angle+=2;
+	    if(leftFinger_angle<-90)  leftFinger_angle=-90;
+	    else if(leftFinger_angle>0) leftFinger_angle=0;
+	    break;
 	}
 }
 
@@ -292,8 +285,8 @@ void display()
 
 	/********************  add object ********************/
 	drawAxes();
-    glColor3f(0.5,0.5,0.5);
-    drawFullHand();
+        glColor3f(0.5,0.5,0.5);
+        drawFullHand();
 
 	glutSwapBuffers();
 }
@@ -316,12 +309,13 @@ void init()
 
 
 	/************************ set-up projection here ********************/
-    glMatrixMode(GL_PROJECTION);
+        glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluPerspective(80,	1,	1,	1000.0);
 }
 
-int main(int argc, char **argv){
+int main(int argc, char **argv)
+{
 	glutInit(&argc,argv);
 	glutInitWindowSize(500, 500);
 	glutInitWindowPosition(0, 0);
