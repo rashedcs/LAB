@@ -19,5 +19,6 @@ Goals:
 ?- car(bmw,_,_,_).
 true.
 
-?- car(bmw,_,_,_).
-true.
+?- car(van,_,Color,_).
+Color = red.
+
