@@ -30,5 +30,5 @@ student(symbol,symbol, integer)
         write("0. Exit"),nl,
        %write("Enter your choice : "),nl,
         read(CH),
-        choice(CH).
+        choice(CH). 
 
