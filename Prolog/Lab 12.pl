@@ -1,9 +1,16 @@
+repeat.
+repeat:-
+    repeat.
+
 loop:-
+    repeat,
     go,
     %write("Would you like to try again(y/n) ? "),
     response(Reply),
     Reply='n'.
 loop.
+
+
 
 
 
