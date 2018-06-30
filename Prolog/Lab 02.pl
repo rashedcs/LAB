@@ -5,8 +5,6 @@ parent(yakub, yahuda).
 parent(yakub, benti).
 
 parent(yusuf, abraham).
-parent(lebi, levi).
-
 
 parent(rahela, yusuf).
 parent(rahela, beniamin).
