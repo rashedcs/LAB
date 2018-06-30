@@ -1,40 +1,46 @@
-parent(X,Y) :- father(X,Y).
-parent(X,Y) :- mother(X,Y).
-grandparent(X,Z) :- parent(X,Y), parent(Y,Z).
-ancestor(X,Z) :- parent(X,Z).
-ancestor(X,Y) :- parent(X,Y), ancestor(Y,Z).
-sibling(X,Y) :- mother(M,X), mother(M,Y), 
-                father(F,X), father(F,Y), X \= Y.
-cousin(X,Y) :- parent(U,X), parent(V,Y), sibling(U,V).
+parent(yakub, yusuf).
+parent(yakub, levi).
+parent(yakub, beniamin).
+parent(yakub, yahuda).
+parent(yakub, benti).
 
-father(albert, jeffrey).
-mother(alice, jeffrey).
-father(albert, george).
-mother(alice, george).
-father(john, mary).
-mother(sue, mary).
-father(george, cindy).
-mother(mary, cindy).
-father(george, victor).
-mother(mary, victor).
+parent(yusuf, abraham).
+parent(lebi, levi).
 
 
+parent(rahela, yusuf).
+parent(rahela, beniamin).
+parent(lia, levi).
+parent(lia, yahuda).
 
-parent(raihan,safi).
-parent(jui, safi).
-male(raihan).
-female(jui).
+male(yakub).
+male(yusuf).
+male(levi).
+mle(yahuda).
+male(beniamin).
 
-brother(X,Y):- male(X), parent(X,Z), parent(Y,Z).
-sister(X,Y):- female(X), parent(X,Z), parent(Y,Z).
+female(rahela).
+female(lia).
+female(benti).
 
 
 
+brother(X,Y):- male(X), parent(Z,X), parent(Z,Y).
+sister(X,Y):-  female(X), parent(Z,X), parent(Z,Y).
 
 
-Goal :
-?- brother(raihan,jui).
- True
- 
- 
- link:http://www.dailyfreecode.com/Code/prolog-find-relations-family-3025.aspx
+father(X,Y) :- male(X), parent(X,Y).
+mother(X,Y) :- female(X), mother(X,Y).
+
+grandpa(X,Z) :- male(X), parent(X,Y), parent(Y,Z).
+grandma(X,Z) :- female(X), parent(X,Y), parent(Y,Z).
+
+
+
+?- brother(X,levi),!.
+X = yusuf.
+
+
+?- sister(Y,levi).
+Y = benti 
+
