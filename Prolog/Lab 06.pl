@@ -3,7 +3,7 @@ sum(N,R) :-
   N > 0 ,
   M is N-1 ,
   sum(M, T) ,
-  R is T+N .
+  R is N+T .
   
   
   
