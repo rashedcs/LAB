@@ -11,7 +11,7 @@
                 /* Determine Li */
                 for(int j=0; j<n; j++)
                 {
-                    if(j!=i)
+                    if(i!=j)
                     {
                         num *= (xi-x[j]); 
                         dem *= (x[i]-x[j]);
