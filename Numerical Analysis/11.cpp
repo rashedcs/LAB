@@ -1,4 +1,4 @@
- #include<bits/stdc++.h>
+    #include<bits/stdc++.h>
     using namespace std;
 
     double newton(double x[], double y[],  int n,  double xn)
