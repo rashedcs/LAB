@@ -32,6 +32,32 @@ void drawAxes()
 		glEnd();
 }
 
+
+void drawCylinder(double radius, double height, double segments)
+{
+    struct point points[100];
+
+    for(int i=0; i<=segments; i++)
+    {
+        points[i].x=radius*cos(((double)i/(double)segments)*2*3.1416);
+        points[i].z=radius*sin(((double)i/(double)segments)*2*3.1416);
+    }
+
+    for(int i=0;i<segments;i++)
+    {
+        glColor3f(1, 0, 1);
+        glBegin(GL_POLYGON);
+        {
+            glVertex3f(points[i].x,-radius,points[i].z);
+			glVertex3f(points[i].x,radius,points[i].z);
+			glVertex3f(points[i+1].x,radius,points[i+1].z);
+			glVertex3f(points[i+1].x,-radius,points[i+1].z);
+        }
+        glEnd();
+    }
+}
+
+
 void drawCylinder(double radius, double height, double segments)
 {
     for(int i=0; i<segments; i++)
