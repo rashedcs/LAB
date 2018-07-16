@@ -7,3 +7,9 @@ loop(N) :-
     
     
     
+loop(0,0).
+loop(M,N) :-
+    between(M, N, X),
+    writeln(X),
+    X >= N, !.
+    loop(M,X).   
