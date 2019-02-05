@@ -1,8 +1,8 @@
 s=imread('babu.jpg');
 g=im2bw(s);
 [m n]=size(g);
-b = [0 1 0; 1 1 1 ; 0 1 0]; %The structuring element: ');
-[p q]=size(b);            %figure, imshow(g)
+b = [0 1 0; 1 1 1 ; 0 1 0]; 
+[p q]=size(b);           
 temp= zeros(m,n);
 
 for i=1:m
