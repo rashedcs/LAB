@@ -1,11 +1,10 @@
 s=imread('babu.jpg');
 g=im2bw(s);
-%b=input('enter the structuring element: ');
-b = [0 1 0; 1 1 1 ; 0 1 0];
-[p q]=size(b);
-%figure, imshow(g)
 [m n]=size(g);
+b = [0 1 0; 1 1 1 ; 0 1 0]; %The structuring element: ');
+[p q]=size(b);            %figure, imshow(g)
 temp= zeros(m,n);
+
 for i=1:m
    for j=1:n
       if (g(i,j)==1)    
@@ -21,5 +20,6 @@ for i=1:m
       end
    end
 end
+
 subplot(2,1,1), imshow(g),title('orginal image');
 subplot(2,1,2), imshow(temp),title('dialation image');
