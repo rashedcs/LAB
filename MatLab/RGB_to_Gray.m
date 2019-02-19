@@ -4,11 +4,11 @@ subplot(1,2,1), imshow(img), title('Binary Input image');
 
 for i = 1:1:x
    for j = 1:1:y
-      img(i,j) = 0.40*img(i,j,1) + 0.50*img(i,j,2) + 0.30*img(i,j,3);
+      res(i,j) = 0.40*img(i,j,1) + 0.50*img(i,j,2) + 0.30*img(i,j,3);
    end
 end
 
-subplot(1,2,2), imshow(img), title('Gray Scale  image');
+subplot(1,2,2), imshow(res), title('Gray Scale  image');
 
 
 %with function
