@@ -1,13 +1,14 @@
-im = imread('babu.jpg')
+im=imread('C:\Users\Rashed\Downloads\1.jpg');
+%im = imread('babu.jpg')
 %rgb  = zeros(size(im,1),size(im,2))
 %rgb = .298*im(:,:,1)+.587*im(:,:,2)+.114*im(:,:,3);
 %subplot(2,1,1), imshow(rgb),title('Orginal image');
 inim = rgb2gray(im);
 subplot(2,1,1), imshow(inim),title('Input image')
 
-exim = wextend(2,'zpd',rgb,1);
+exim = wextend(2,'zpd',inim,1);
 mask = [1 1 1 ; 1 1 1 ; 1 1 1];
-[r,c] = size(w);
+[r,c] = size(exim);
 
 for i = 1:1:r-2
     for j = 1:1:c-2
