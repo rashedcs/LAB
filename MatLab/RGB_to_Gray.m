@@ -1,14 +1,14 @@
 img=imread('C:\Users\Rashed\Downloads\1.jpg');
 subplot(1,2,1), imshow(img), title('Binary Input image');
-[x,y,z] = size(img);
+%[x,y] = size(img);
 
-for i = 1:1:x
-   for j = 1:1:y
-      res(i,j) = 0.40*img(i,j,1) + 0.50*img(i,j,2) + 0.30*img(i,j,3);
+for i = 1:1:size(img,1)
+   for j = 1:1:size(img,2)
+      image(i,j) = 0.40*img(i,j,1) + 0.50*img(i,j,2) + 0.30*img(i,j,3);
    end
 end
 
-subplot(1,2,2), imshow(res), title('Gray Scale  image');
+subplot(1,2,2), imshow(image), title('Gray Scale  image');
 
 
 %with function
