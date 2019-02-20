@@ -1,18 +1,12 @@
-%image=imresize(rgb2gray(imread('D:\Programming\Image Processing\Image\neg.jpg')),[200 200]);
-img=imresize(rgb2gray(imread('C:\Users\Rashed\Downloads\1.jpg')),[200 200]);
-% Convert image to grayscale image  
-%img=rgb2gray(image); 
-  
-% get the dimension of the image  
-[x, y ] = size(img); 
-  
+img=imresize(imread('C:\Users\Rashed\Downloads\1.jpg'),[200 200]);
+%img=imresize(rgb2gray(imread('C:\Users\Rashed\Downloads\1.jpg')),[200 200]);
+%img=rgb2gray(img); 
+[x, y] = size(img); 
   
 % Create a frequency array of size 256 
 frequency = 1 : 256; 
-  
 count = 0; 
-% Iterate over grayscale image matrix  
-% for every possible intensity value 
+% Iterate over grayscale image matrix for every possible intensity value 
 % and count them 
     
 for i = 1 : 256 
@@ -26,7 +20,7 @@ for i = 1 : 256
         end
     end
     % update ith position of frequency array with count 
-    frequency(i) = count; 
+    frequency(i) = count/x*y; 
   
     % reset count 
     count = 0; 
@@ -35,18 +29,19 @@ end
 
 % Display Histogram 
 n = 0:255
-stem(n, frequency); 
+stem(n, frequency,'r '); 
 
-grid on; 
-ylabel('Number of pixels with such intensity levels -->'); 
+%grid on; 
 xlabel('Intensity Levels  -->'); 
+ylabel('Number of pixels with such intensity levels -->'); 
 title('HISTOGRAM OF THE IMAGE'); 
 
 
 figure,
-x = 1900:20:2000;
-y = [75 91 105 123.5 125 236];
-bar(x,y)
+bar(n, frequency,'r '),title('Histogram')
+%x = 1900:20:2000;
+%y = [75 91 105 123.5 125 236];
+%bar(x,y)
 
 %figure
 %x = 0:50:300
