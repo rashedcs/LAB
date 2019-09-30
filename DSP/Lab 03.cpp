@@ -22,12 +22,14 @@ void evenOdd(float sig[], int num,int ori)
     int size = max(num-ori,num2-ori2) + max(ori,ori2);//Calculate size =left+rig  
     float x1[size]={0},x2[size]={0},odd[size]={0},even[size]={0};
     
+    /* Left Side Calculation */
     int ix=max(ori,ori2)-ori, temp1=ix+num;
     for(int i=ix,j=0; i<temp1; i++,j++)
     {
         x1[i]=sig[j];
     }
 
+    /* Right Side Calculation */
     int kx=max(ori,ori2)-ori2, temp2=kx+num2;
     for(int k=kx,l=0; k<temp2; k++,l++)
     {
