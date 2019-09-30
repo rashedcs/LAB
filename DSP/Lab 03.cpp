@@ -2,7 +2,6 @@
 using namespace std;
 
 
-
 void evenOdd(float sig[], int num,int ori)
 {
     
@@ -15,14 +14,12 @@ void evenOdd(float sig[], int num,int ori)
     }
     reverse(sig2,sig2+num2);
    */
-    
     for(int i=0;i<num;i++)
     {
        sig2[num-i-1]=sig[i];
     }
     
     int size = max(num-ori,num2-ori2) + max(ori,ori2);//Calculate size =left+rig  
-
     float x1[size]={0},x2[size]={0},odd[size]={0},even[size]={0};
     
     int ix=max(ori,ori2)-ori,j=0;
@@ -63,7 +60,6 @@ void evenOdd(float sig[], int num,int ori)
 int main()
 {
     int num,ori;
-
    // cout<<"Size of signal: ";
     cin>>num;
     float sig[num];
@@ -80,3 +76,4 @@ int main()
 
     return 0;
 }
+/* Link : http://ideone.com/lUkL3n */
