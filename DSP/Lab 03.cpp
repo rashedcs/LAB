@@ -3,54 +3,52 @@ using namespace std;
 
 
 
-int main()
+void evenOdd(float sig[], int num,int ori)
 {
-    int sn1,sn2,or1,or2;
-
-   // cout<<"Size of signal: ";
-    cin>>sn1;
-    sn2=sn1;
-    float sig1[sn1],sig2[sn2];
-
-   // cout<<"Enter signal\n";
-    for(int i=0;i<sn1;i++){
-        cin>>sig1[i];
-        sig2[i]=sig1[i];
+    
+    int num2 = num, ori2=(num-ori)+1;
+    int sig2[num2]={};
+    /*
+    for(int i=0;i<num;i++)
+    {
+       sig2[i]=sig[i];
     }
-   // cout<<"Enter origin of signal 1: ";
-    cin>>or1;
-
-    reverse(sig2,sig2+sn2);
-
-    or2=(sn1-or1)+1;
-
-    int size=max(sn1-or1,sn2-or2) + max(or1,or2);
+    reverse(sig2,sig2+num2);
+   */
+    
+    for(int i=0;i<num;i++)
+    {
+       sig2[num-i-1]=sig[i];
+    }
+    
+    int size = max(num-ori,num2-ori2) + max(ori,ori2);//Calculate size =left+rig  
 
     float x1[size]={0},x2[size]={0},odd[size]={0},even[size]={0};
     
-    
-    int i=max(or1,or2)-or1,j=0;
-    int temp=i+sn1;
-    for(;i<temp;i++)
+    int ix=max(ori,ori2)-ori,j=0;
+    int temp1=ix+num;
+    for(int i=ix;i<temp1;i++)
     {
-        x1[i]=sig1[j];
+        x1[i]=sig[j];
         j++;
     }
 
-    int k=max(or1,or2)-or2,l=0;
-    int temp2=k+sn2;
-    for(;k<temp2;k++){
+    int kx=max(ori,ori2)-ori2,l=0;
+    int temp2=kx+num2;
+    for(int k=kx; k<temp2; k++)
+    {
         x2[k]=sig2[l];
         l++;
     }
-
-    for(int i=0;i<size;i++){
+    
+    for(int i=0;i<size;i++)
+    {
         even[i]=(x1[i]+x2[i])/2;
         odd[i]=(x1[i]-x2[i])/2;
     }
-
    // cout<<"Even components of the signal \n";
-    for(int i=0;i<size;i++){
+    for(int i=0;i<size;i++)
+    {
         cout<<even[i]<<" ";
     }
     cout<<endl;
@@ -60,6 +58,25 @@ int main()
         cout<<odd[i]<<" ";
     }
     cout<<endl;
+}
+
+int main()
+{
+    int num,ori;
+
+   // cout<<"Size of signal: ";
+    cin>>num;
+    float sig[num];
+
+   // cout<<"Enter signal\n";
+    for(int i=0;i<num;i++)
+    {
+        cin>>sig[i];
+    }
+   // cout<<"Enter origin of signal 1: ";
+    cin>>ori;
+
+    evenOdd(sig,num, ori);
 
     return 0;
 }
